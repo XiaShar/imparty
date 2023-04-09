@@ -1,2 +1,2 @@
-# _demo_register
-uni-app for register
+# imparty
+uni-app for imparty
