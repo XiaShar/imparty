@@ -1,8 +1,9 @@
 <script>
+	import uniIdPageInit from '@/uni_modules/uni-id-pages/init.js';
 	export default {
-		onLaunch: function() {
-			console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
+		onLaunch: async function() {
 			console.log('App Launch')
+			await uniIdPageInit()
 		},
 		onShow: function() {
 			console.log('App Show')

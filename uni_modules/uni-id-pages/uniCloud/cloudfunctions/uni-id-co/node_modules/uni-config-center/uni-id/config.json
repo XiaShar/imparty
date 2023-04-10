@@ -1,7 +1,7 @@
 {
-  "passwordSecret": "", 
+  "passwordSecret": "VULPECULASUNDAYV", 
   "passwordStrength": "medium", 
-  "tokenSecret": "", 
+  "tokenSecret": "VULPECULASUNDAYV", 
   "tokenExpiresIn": 7200, 
   "tokenExpiresThreshold": 3600, 
   "passwordErrorLimit": 6, 

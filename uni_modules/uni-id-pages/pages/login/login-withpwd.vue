@@ -5,15 +5,15 @@
 			<image :src="logo"></image>
 		</view>
 		<!-- 顶部文字 -->
-		<text class="title title-box">账号密码登录</text>
+		<text class="title title-box">Vulpecula</text>
 		<uni-forms>
 			<uni-forms-item name="username">
 				<uni-easyinput :focus="focusUsername" @blur="focusUsername = false" class="input-box"
-					:inputBorder="false" v-model="username" placeholder="请输入手机号/用户名/邮箱" />
+					:inputBorder="false" v-model="username" placeholder="请输入手机号/用户名/邮箱" :clearable="false"/>
 			</uni-forms-item>
 			<uni-forms-item name="password">
-				<uni-easyinput :focus="focusPassword" @blur="focusPassword = false" class="input-box" clearable
-					type="password" :inputBorder="false" v-model="password" placeholder="请输入密码" />
+				<uni-easyinput :focus="focusPassword" @blur="focusPassword = false" class="input-box"
+					type="password" :inputBorder="false" v-model="password" placeholder="请输入密码" :clearable="false"/>
 			</uni-forms-item>
 		</uni-forms>
 		<uni-captcha v-if="needCaptcha" focus ref="captcha" scene="login-by-pwd" v-model="captcha" />
@@ -137,7 +137,7 @@
 			toRegister() {
 				uni.navigateTo({
 					url: this.config.isAdmin ? '/uni_modules/uni-id-pages/pages/register/register-admin' :
-						'/uni_modules/uni-id-pages/pages/register/register',
+						'/uni_modules/uni-id-pages/pages/register/register-by-email',
 					fail(e) {
 						console.error(e);
 					}
@@ -172,5 +172,12 @@
 
 	.link {
 		font-size: 12px;
+	}
+	
+	.title-box{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 50rpx;
 	}
 </style>

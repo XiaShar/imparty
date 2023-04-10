@@ -4,7 +4,7 @@
 		<slot name="label">
 			<view class="uni-forms-item__label" :class="{'no-label':!label && !required}"
 				:style="{width:localLabelWidth,justifyContent: localLabelAlign}">
-				<text v-if="required" class="is-required">*</text>
+
 				<text>{{label}}</text>
 			</view>
 		</slot>

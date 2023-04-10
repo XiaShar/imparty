@@ -5,17 +5,17 @@
 
 		<view class="container">
 			<view class="icon">
-				<img src="@/static/user-img.png" alt="">
+				<uni-id-pages-avatar width="100rpx" height="100rpx"></uni-id-pages-avatar>
 			</view>
 			<view class="title-area">
 				<view class="name">
-					韩昊炜
+					{{ userInfo.nickname }}
 				</view>
 				<view class="detail">
 					2021级 计算机学院
 				</view>
 			</view>
-			<view class="edit-icon">
+			<view class="edit-icon"  @click="editInfo()">
 				<img src="@/static/edit.png" alt="">
 			</view>
 		</view>
@@ -101,14 +101,41 @@
 </template>
 
 <script>
+	import {
+	  store,
+	  mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
+	
+	const uniIdCo = uniCloud.importObject("uni-id-co")
+	
 	export default {
 		data() {
 			return {
-
+			}
+		},
+		computed:{
+			userInfo(){
+				return store.userInfo
 			}
 		},
 		methods: {
-
+			toLogin(){
+				uni.navigateTo({
+					url:"/uni_modules/uni-id-pages/pages/login/login-withpwd"
+				})
+			},
+			
+			editInfo(){
+				if(uniCloud.getCurrentUserInfo().uid === null){
+					uni.navigateTo({
+						url:"/uni_modules/uni-id-pages/pages/login/login-withpwd"
+					})
+				}else{
+					uni.navigateTo({
+						url:"./editingView"
+					})
+				}
+			}
 		}
 	}
 </script>

@@ -5,7 +5,7 @@ $uni-space-root: 2;
 $uni-radius-root:5px;
 
 // 主色
-$uni-primary: #2979ff;
+$uni-primary: #FCA464;
 $uni-primary-disable:mix(#fff,$uni-primary,50%);
 $uni-primary-light: mix(#fff,$uni-primary,80%);
 
@@ -60,3 +60,5 @@ $uni-shadow-lg:0px 1px 10px 2px rgba($color: #a5a4a4, $alpha: 0.5);
 
 // 蒙版
 $uni-mask: rgba($color: #000000, $alpha: 0.4);
+
+$uni-color-primary: #000000;
