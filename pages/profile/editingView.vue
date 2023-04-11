@@ -70,7 +70,7 @@
 				dynamicFormData: {
 					name: store.userInfo.nickname,
 					gender: store.userInfo.gender,
-					school: store.userInfo.comment,
+					school: store.userInfo.school,
 					birthday: "",
 					phone: store.userInfo.phone,
 					email: store.userInfo.email
@@ -137,7 +137,8 @@
 				// })
 				mutations.updateUserInfo({
 					nickname: this.dynamicFormData.name,
-					gender: this.dynamicFormData.gender
+					gender: this.dynamicFormData.gender,
+					school: this.dynamicFormData.school
 				})
 			},
 			

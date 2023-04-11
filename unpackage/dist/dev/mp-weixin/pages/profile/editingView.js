@@ -10,7 +10,7 @@ const _sfc_main = {
       dynamicFormData: {
         name: uni_modules_uniIdPages_common_store.store.userInfo.nickname,
         gender: uni_modules_uniIdPages_common_store.store.userInfo.gender,
-        school: uni_modules_uniIdPages_common_store.store.userInfo.comment,
+        school: uni_modules_uniIdPages_common_store.store.userInfo.school,
         birthday: "",
         phone: uni_modules_uniIdPages_common_store.store.userInfo.phone,
         email: uni_modules_uniIdPages_common_store.store.userInfo.email
@@ -73,7 +73,8 @@ const _sfc_main = {
     submit(ref) {
       uni_modules_uniIdPages_common_store.mutations.updateUserInfo({
         nickname: this.dynamicFormData.name,
-        gender: this.dynamicFormData.gender
+        gender: this.dynamicFormData.gender,
+        school: this.dynamicFormData.school
       });
     },
     updatePhone() {

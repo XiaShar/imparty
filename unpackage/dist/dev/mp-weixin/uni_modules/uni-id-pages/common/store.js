@@ -34,7 +34,7 @@ const mutations = {
         customUI: true
       });
       try {
-        let res = await usersTable.where("'_id' == $cloudEnv_uid").field("mobile,nickname,username,email,avatar_file").get();
+        let res = await usersTable.where("'_id' == $cloudEnv_uid").field("mobile,nickname,username,email,avatar_file,gender,school").get();
         const realNameRes = await uniIdCo2.getRealNameInfo();
         this.setUserInfo({
           ...res.result.data[0],
@@ -54,7 +54,6 @@ const mutations = {
     return data2;
   },
   async logout() {
-    var _a;
     if (common_vendor.Ls.getCurrentUserInfo().tokenExpired > Date.now()) {
       try {
         await uniIdCo.logout();
@@ -65,7 +64,7 @@ const mutations = {
     common_vendor.index.removeStorageSync("uni_id_token");
     common_vendor.index.setStorageSync("uni_id_token_expired", 0);
     common_vendor.index.redirectTo({
-      url: `/${((_a = common_vendor.pagesJson.uniIdRouter) == null ? void 0 : _a.loginPage) ?? "uni_modules/uni-id-pages/pages/login/login-withoutpwd"}`
+      url: "uni_modules/uni-id-pages/pages/login/login-withpwd"
     });
     common_vendor.index.$emit("uni-id-pages-logout");
     this.setUserInfo({}, { cover: true });

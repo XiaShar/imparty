@@ -26,7 +26,7 @@ const _sfc_main = {
   methods: {
     // 页面跳转，找回密码
     toRetrievePwd() {
-      let url = "/uni_modules/uni-id-pages/pages/retrieve/retrieve";
+      let url = "/uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email";
       if (/^1\d{10}$/.test(this.username)) {
         url += `?phoneNumber=${this.username}`;
       }
@@ -103,17 +103,15 @@ if (!Array) {
   const _easycom_uni_forms2 = common_vendor.resolveComponent("uni-forms");
   const _easycom_uni_captcha2 = common_vendor.resolveComponent("uni-captcha");
   const _easycom_uni_id_pages_agreements2 = common_vendor.resolveComponent("uni-id-pages-agreements");
-  const _easycom_uni_id_pages_fab_login2 = common_vendor.resolveComponent("uni-id-pages-fab-login");
-  (_easycom_uni_easyinput2 + _easycom_uni_forms_item2 + _easycom_uni_forms2 + _easycom_uni_captcha2 + _easycom_uni_id_pages_agreements2 + _easycom_uni_id_pages_fab_login2)();
+  (_easycom_uni_easyinput2 + _easycom_uni_forms_item2 + _easycom_uni_forms2 + _easycom_uni_captcha2 + _easycom_uni_id_pages_agreements2)();
 }
 const _easycom_uni_easyinput = () => "../../../uni-easyinput/components/uni-easyinput/uni-easyinput.js";
 const _easycom_uni_forms_item = () => "../../../uni-forms/components/uni-forms-item/uni-forms-item.js";
 const _easycom_uni_forms = () => "../../../uni-forms/components/uni-forms/uni-forms.js";
 const _easycom_uni_captcha = () => "../../../uni-captcha/components/uni-captcha/uni-captcha.js";
 const _easycom_uni_id_pages_agreements = () => "../../components/uni-id-pages-agreements/uni-id-pages-agreements.js";
-const _easycom_uni_id_pages_fab_login = () => "../../components/uni-id-pages-fab-login/uni-id-pages-fab-login.js";
 if (!Math) {
-  (_easycom_uni_easyinput + _easycom_uni_forms_item + _easycom_uni_forms + _easycom_uni_captcha + _easycom_uni_id_pages_agreements + _easycom_uni_id_pages_fab_login)();
+  (_easycom_uni_easyinput + _easycom_uni_forms_item + _easycom_uni_forms + _easycom_uni_captcha + _easycom_uni_id_pages_agreements)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -123,7 +121,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.p({
       focus: $data.focusUsername,
       inputBorder: false,
-      placeholder: "请输入手机号/用户名/邮箱",
+      placeholder: "请输入邮箱",
       clearable: false,
       modelValue: $data.username
     }),
@@ -163,8 +161,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     r: common_vendor.o((...args) => $options.toRetrievePwd && $options.toRetrievePwd(...args))
   } : {}, {
     s: common_vendor.t(_ctx.config.isAdmin ? "注册管理员账号" : "注册账号"),
-    t: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args)),
-    v: common_vendor.sr("uniFabLogin", "58ed63b0-7")
+    t: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);

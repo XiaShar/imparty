@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
-require("./uni_modules/uni-id-pages/init.js");
+const uni_modules_uniIdPages_init = require("./uni_modules/uni-id-pages/init.js");
+require("./uni_modules/uni-id-pages/config.js");
 if (!Math) {
   "./pages/profile/index.js";
   "./pages/profile/editingView.js";
@@ -26,7 +27,7 @@ if (!Math) {
   "./uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.js";
 }
 const _sfc_main = {
-  onLaunch: function() {
+  onLaunch: async function() {
     console.log("App Launch");
     common_vendor.index.onPushMessage((res) => {
       console.log("收到推送消息：", res);
@@ -44,6 +45,7 @@ const _sfc_main = {
         console.log(err);
       }
     });
+    await uni_modules_uniIdPages_init.uniIdPageInit();
   },
   onShow: function() {
     console.log("App Show");
