@@ -1,0 +1,66 @@
+"use strict";
+const common_vendor = require("../../common/vendor.js");
+const uni_modules_uniIdPages_common_store = require("../../uni_modules/uni-id-pages/common/store.js");
+const common_assets = require("../../common/assets.js");
+require("../../uni_modules/uni-id-pages/config.js");
+common_vendor.Ls.importObject("uni-id-co");
+const _sfc_main = {
+  data() {
+    return {};
+  },
+  computed: {
+    userInfo() {
+      return uni_modules_uniIdPages_common_store.store.userInfo;
+    }
+  },
+  methods: {
+    toLogin() {
+      common_vendor.index.navigateTo({
+        url: "/uni_modules/uni-id-pages/pages/login/login-withpwd"
+      });
+    },
+    editInfo() {
+      if (common_vendor.Ls.getCurrentUserInfo().uid === null) {
+        common_vendor.index.navigateTo({
+          url: "/uni_modules/uni-id-pages/pages/login/login-withpwd"
+        });
+      } else {
+        common_vendor.index.navigateTo({
+          url: "./editingView"
+        });
+      }
+    }
+  }
+};
+if (!Array) {
+  const _easycom_uni_id_pages_avatar2 = common_vendor.resolveComponent("uni-id-pages-avatar");
+  const _easycom_uni_card2 = common_vendor.resolveComponent("uni-card");
+  (_easycom_uni_id_pages_avatar2 + _easycom_uni_card2)();
+}
+const _easycom_uni_id_pages_avatar = () => "../../uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar.js";
+const _easycom_uni_card = () => "../../uni_modules/uni-card/components/uni-card/uni-card.js";
+if (!Math) {
+  (_easycom_uni_id_pages_avatar + _easycom_uni_card)();
+}
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return {
+    a: common_vendor.p({
+      width: "100rpx",
+      height: "100rpx"
+    }),
+    b: common_vendor.t($options.userInfo.nickname),
+    c: common_assets._imports_0,
+    d: common_vendor.o(($event) => $options.editInfo()),
+    e: common_assets._imports_1,
+    f: common_assets._imports_2,
+    g: common_assets._imports_3,
+    h: common_assets._imports_4,
+    i: common_assets._imports_5,
+    j: common_assets._imports_6,
+    k: common_assets._imports_5,
+    l: common_assets._imports_7,
+    m: common_assets._imports_5
+  };
+}
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/index.vue"]]);
+wx.createPage(MiniProgramPage);

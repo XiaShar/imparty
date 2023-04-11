@@ -70,7 +70,7 @@ const uniIdCo = uniCloud.importObject("uni-id-co")
 				// 	nickname:''
 				// },
 				hasPwd: false,
-				showLoginManage: false ,//通过页面传参隐藏登录&退出登录按钮
+				showLoginManage: true ,//通过页面传参隐藏登录&退出登录按钮
 				setNicknameIng:false
 			}
 		},
