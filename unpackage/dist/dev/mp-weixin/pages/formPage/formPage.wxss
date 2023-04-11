@@ -1,26 +1,75 @@
-/* 水平间距 */
-/* 水平间距 */
-button.data-v-6565de86 {
-  border-radius: 10px;
-  background-color: deepskyblue;
-  margin-right: 1%;
-  font-size: 10rpx;
+
+.title {
+		margin-top: 30rpx;
+		display: flex;
+		justify-content: space-between;
 }
-checkbox.data-v-6565de86 {
-  top: 50%;
-  bottom: 50%;
-  margin-left: 1%;
-  transform: scale(0.5);
+.icon {
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-right: 50rpx;
+		margin-bottom: 20rpx;
 }
-text.data-v-6565de86 {
-  margin-top: 3%;
+.icon img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 }
-.footer.data-v-6565de86 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1rpx solid black;
+.line {
+		position: relative;
+		background-color: gray;
+		height: 1px;
+		width: 650rpx;
 }
-.footer text.data-v-6565de86 {
-  margin-bottom: 20rpx;
+.item {
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+}
+.pop {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 500rpx;
+}
+.uni-pb-5 {
+		padding: 40px;
+}
+.button-group{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: 20rpx;
+		flex-direction: column;
+}
+.subButn{
+		color: white;
+		width: 70%;
+		height: 75rpx;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #FCA464;
+		opacity: 0.9;
+		font-size: 30rpx;
+}
+.logoutButn{
+		color: white;
+		margin-top: 50rpx;
+		width: 70%;
+		height: 75rpx;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: red;
+		opacity: 0.5;
+		font-size: 30rpx;
+}
+.container{
+		margin-left: 50rpx;
+		margin-right: 50rpx;
 }

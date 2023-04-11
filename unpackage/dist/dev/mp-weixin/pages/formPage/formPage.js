@@ -1,55 +1,86 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const uni_modules_uniIdPages_common_store = require("../../uni_modules/uni-id-pages/common/store.js");
+require("../../uni_modules/uni-id-pages/config.js");
+common_vendor.Ls.importObject("uni-id-co");
 const _sfc_main = {
   data() {
     return {
-      checked: false,
-      // 表单数据
-      formData: {
-        name: "LiMing",
-        email: "dcloud@email.com"
+      // 数据源
+      dynamicFormData: {
+        name: uni_modules_uniIdPages_common_store.store.userInfo.nickname,
+        gender: uni_modules_uniIdPages_common_store.store.userInfo.gender,
+        school: uni_modules_uniIdPages_common_store.store.userInfo.school,
+        phone: uni_modules_uniIdPages_common_store.store.userInfo.phone,
+        sign: "",
+        goalGender: 0,
+        goalSchool: ""
       },
-      rules: {
-        // 对name字段进行必填验证
+      // 规则
+      dynamicRules: {
         name: {
           rules: [
             {
               required: true,
-              errorMessage: "请输入姓名"
+              errorMessage: "姓名不能为空"
             },
             {
-              minLength: 3,
-              maxLength: 5,
-              errorMessage: "姓名长度在 {minLength} 到 {maxLength} 个字符"
+              format: "string",
+              errorMessage: "请正确填写姓名"
             }
           ]
         },
-        // 对email字段进行必填验证
+        phone: {
+          rules: [
+            {
+              required: true,
+              errorMessage: "手机号不能为空"
+            },
+            {
+              format: "string",
+              errorMessage: "请正确填写手机号"
+            }
+          ]
+        },
         email: {
-          rules: [{
-            format: "email",
-            errorMessage: "请输入正确的邮箱地址"
-          }]
+          rules: [
+            {
+              format: "email",
+              errorMessage: "请正确填写邮箱"
+            }
+          ]
         }
-      }
+      },
+      sexs: [{
+        text: "男",
+        value: 1
+      }, {
+        text: "女",
+        value: 2
+      }],
+      schools: [{
+        text: "计算机学院",
+        value: "计算机学院"
+      }, {
+        text: "新闻与传播学院",
+        value: "新闻与传播学院"
+      }]
     };
   },
   methods: {
-    /**
-     * 复写 binddata 方法，如果只是为了校验，无复杂自定义操作，可忽略此方法
-     * @param {String} name 字段名称
-     * @param {String} value 表单域的值
-     */
-    // binddata(name,value){
-    // 通过 input 事件设置表单指定 name 的值
-    //   this.$refs.form.setValue(name, value)
-    // },
-    // 触发提交表单
-    submit() {
-      this.$refs.form.validate().then((res) => {
-        console.log("表单数据信息：", res);
-      }).catch((err) => {
-        console.log("表单错误信息：", err);
+    logout() {
+      uni_modules_uniIdPages_common_store.mutations.logout();
+    },
+    submit(ref) {
+      uni_modules_uniIdPages_common_store.mutations.updateUserInfo({
+        nickname: this.dynamicFormData.name,
+        gender: this.dynamicFormData.gender,
+        school: this.dynamicFormData.school
+      });
+    },
+    updatePhone() {
+      common_vendor.index.navigateTo({
+        url: "/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile"
       });
     }
   }
@@ -57,43 +88,117 @@ const _sfc_main = {
 if (!Array) {
   const _easycom_uni_easyinput2 = common_vendor.resolveComponent("uni-easyinput");
   const _easycom_uni_forms_item2 = common_vendor.resolveComponent("uni-forms-item");
+  const _easycom_hpy_form_select2 = common_vendor.resolveComponent("hpy-form-select");
   const _easycom_uni_forms2 = common_vendor.resolveComponent("uni-forms");
-  const _easycom_uni_card2 = common_vendor.resolveComponent("uni-card");
-  (_easycom_uni_easyinput2 + _easycom_uni_forms_item2 + _easycom_uni_forms2 + _easycom_uni_card2)();
+  (_easycom_uni_easyinput2 + _easycom_uni_forms_item2 + _easycom_hpy_form_select2 + _easycom_uni_forms2)();
 }
 const _easycom_uni_easyinput = () => "../../uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.js";
 const _easycom_uni_forms_item = () => "../../uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.js";
+const _easycom_hpy_form_select = () => "../../uni_modules/hpy-form-select/components/hpy-form-select/hpy-form-select.js";
 const _easycom_uni_forms = () => "../../uni_modules/uni-forms/components/uni-forms/uni-forms.js";
-const _easycom_uni_card = () => "../../uni_modules/uni-card/components/uni-card/uni-card.js";
 if (!Math) {
-  (_easycom_uni_easyinput + _easycom_uni_forms_item + _easycom_uni_forms + _easycom_uni_card)();
+  (_easycom_uni_easyinput + _easycom_uni_forms_item + _easycom_hpy_form_select + _easycom_uni_forms)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
-    a: common_vendor.o(($event) => $data.formData.name = $event),
+    a: common_vendor.o(($event) => $data.dynamicFormData.name = $event),
     b: common_vendor.p({
-      type: "text",
-      placeholder: "请输入姓名",
-      modelValue: $data.formData.name
+      inputBorder: false,
+      clearSize: 20,
+      styles: {
+        backgroundColor: "#f5f5f5"
+      },
+      clearable: false,
+      modelValue: $data.dynamicFormData.name
     }),
     c: common_vendor.p({
       label: "姓名",
       name: "name"
     }),
-    d: common_vendor.o([($event) => $data.formData.email = $event.detail.value, ($event) => _ctx.binddata("email", $event.detail.value)]),
-    e: $data.formData.email,
-    f: common_vendor.p({
-      label: "邮箱",
-      name: "email"
+    d: common_vendor.o(($event) => $data.dynamicFormData.gender = $event),
+    e: common_vendor.p({
+      dataList: $data.sexs,
+      text: "text",
+      name: "value",
+      ["hide-border"]: true,
+      modelValue: $data.dynamicFormData.gender
     }),
-    g: $data.checked,
-    h: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    i: common_vendor.sr("form", "6565de86-1,6565de86-0"),
-    j: common_vendor.p({
-      modelValue: $data.formData,
-      rules: $data.rules
-    })
+    f: common_vendor.p({
+      label: "性别",
+      name: "gender"
+    }),
+    g: common_vendor.o(($event) => $data.dynamicFormData.school = $event),
+    h: common_vendor.p({
+      dataList: $data.schools,
+      text: "text",
+      name: "value",
+      ["hide-border"]: true,
+      modelValue: $data.dynamicFormData.school
+    }),
+    i: common_vendor.p({
+      label: "学院",
+      name: "school"
+    }),
+    j: common_vendor.o(($event) => $data.dynamicFormData.phone = $event),
+    k: common_vendor.p({
+      inputBorder: false,
+      clearSize: 20,
+      styles: {
+        backgroundColor: "#f5f5f5"
+      },
+      clearable: false,
+      modelValue: $data.dynamicFormData.phone
+    }),
+    l: common_vendor.p({
+      label: "手机号",
+      name: "phone"
+    }),
+    m: common_vendor.o(($event) => $data.dynamicFormData.sign = $event),
+    n: common_vendor.p({
+      inputBorder: false,
+      clearSize: 20,
+      styles: {
+        backgroundColor: "#f5f5f5"
+      },
+      clearable: false,
+      modelValue: $data.dynamicFormData.sign
+    }),
+    o: common_vendor.p({
+      label: "星座",
+      name: "sign"
+    }),
+    p: common_vendor.o(($event) => $data.dynamicFormData.goalGender = $event),
+    q: common_vendor.p({
+      dataList: $data.sexs,
+      text: "text",
+      name: "value",
+      ["hide-border"]: true,
+      modelValue: $data.dynamicFormData.goalGender
+    }),
+    r: common_vendor.p({
+      label: "对方性别",
+      name: "goalGender"
+    }),
+    s: common_vendor.o(($event) => $data.dynamicFormData.goalSchool = $event),
+    t: common_vendor.p({
+      dataList: $data.schools,
+      text: "text",
+      name: "value",
+      ["hide-border"]: true,
+      modelValue: $data.dynamicFormData.goalSchool
+    }),
+    v: common_vendor.p({
+      label: "对方学院",
+      name: "goalSchool"
+    }),
+    w: common_vendor.sr("dynamicForm", "6d7603c9-0"),
+    x: common_vendor.p({
+      rules: $data.dynamicRules,
+      model: $data.dynamicFormData,
+      ["label-position"]: "top"
+    }),
+    y: common_vendor.o(($event) => $options.submit("dynamicForm"))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-6565de86"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/formPage/formPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/formPage/formPage.vue"]]);
 wx.createPage(MiniProgramPage);
