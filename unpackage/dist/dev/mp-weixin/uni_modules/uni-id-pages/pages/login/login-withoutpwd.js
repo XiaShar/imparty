@@ -145,5 +145,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     p: common_vendor.sr("uniFabLogin", "f1f87fcd-3")
   });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f1f87fcd"], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-f1f87fcd"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/login/login-withoutpwd.vue"]]);
 wx.createPage(MiniProgramPage);

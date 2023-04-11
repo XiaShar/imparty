@@ -73,5 +73,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     m: $data.icon.rightArrow
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/profile/index.vue"]]);
 wx.createPage(MiniProgramPage);

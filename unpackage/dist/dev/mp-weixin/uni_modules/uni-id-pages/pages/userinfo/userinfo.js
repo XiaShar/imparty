@@ -228,5 +228,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     t: common_vendor.o((...args) => $options.login && $options.login(...args))
   }) : {});
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0be2f605"], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-0be2f605"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/userinfo/userinfo.vue"]]);
 wx.createPage(MiniProgramPage);

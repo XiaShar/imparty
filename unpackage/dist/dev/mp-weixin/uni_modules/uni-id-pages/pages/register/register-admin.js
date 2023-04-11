@@ -161,20 +161,20 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       required: true,
       modelValue: $data.formData.password2
     }),
-    t: common_vendor.sr("captcha", "51a08011-10,51a08011-9"),
+    t: common_vendor.sr("captcha", "61ca5188-10,61ca5188-9"),
     v: common_vendor.o(($event) => $data.formData.captcha = $event),
     w: common_vendor.p({
       scene: "register",
       modelValue: $data.formData.captcha
     }),
-    x: common_vendor.sr("agreements", "51a08011-11,51a08011-0"),
+    x: common_vendor.sr("agreements", "61ca5188-11,61ca5188-0"),
     y: common_vendor.p({
       scope: "register"
     }),
     z: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
     A: common_vendor.o((...args) => $options.navigateBack && $options.navigateBack(...args)),
     B: common_vendor.o((...args) => $options.toLogin && $options.toLogin(...args)),
-    C: common_vendor.sr("form", "51a08011-0"),
+    C: common_vendor.sr("form", "61ca5188-0"),
     D: common_vendor.p({
       value: $data.formData,
       rules: $data.rules,
@@ -183,5 +183,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/register/register-admin.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/register/register-admin.vue"]]);
 wx.createPage(MiniProgramPage);
