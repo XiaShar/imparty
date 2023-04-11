@@ -64,6 +64,7 @@
 </template>
 
 <script>
+  let _id = ''
   //title,masteratti,aligintitle,description,known,requirement
   export default {
     data() {
@@ -76,9 +77,15 @@
 
     },
     computed: {},
+    onLoad: function (option) { //option为object类型，会序列化上个页面传递的参数
+        //console.log(option._id)
+        _id = option._id
+    	},
     mounted() {
+      console.log(_id)
       uniCloud.callFunction({
-        name: 'detail-activities'
+        name: 'detail-activities',
+        data:{objId:_id}
       }).then((res) => {
         this.dedata = res.result.data
         console.log(res.dedata.requirement)

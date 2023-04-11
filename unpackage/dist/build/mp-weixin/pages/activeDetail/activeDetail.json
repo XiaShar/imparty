@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "这是活动详情页面",
+  "navigationBarBackgroundColor": "#ffffff",
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card"
+  }
+}

@@ -4,6 +4,10 @@ const _sfc_main = {
   components: {},
   data() {
     return {
+      //渲染数据
+      firstdata: [],
+      nowdata: [],
+      willdata: [],
       // cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
       avatar: [
         "https://img1.baidu.com/it/u=2407625550,1485951297&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1680627600&t=2d3299bc86c91a1048d93cf01096bc15",
@@ -28,6 +32,25 @@ const _sfc_main = {
         icon: "none"
       });
     }
+  },
+  mounted() {
+    common_vendor.Ls.callFunction({
+      name: "detail-activities"
+    }).then((res) => {
+      this.firstdata = res.result.data;
+      for (let i = 0; i < this.firstdata.length; i++) {
+        if (this.firstdata[i].isdoing === "now") {
+          this.nowdata.push(this.firstdata[i]);
+        } else {
+          this.willdata.push(this.firstdata[i]);
+        }
+      }
+      console.log(this.nowdata);
+      console.log(this.willdata);
+      console.log(res.result.data);
+    }).catch((err) => {
+      console.error(err);
+    });
   }
 };
 if (!Array) {
@@ -39,7 +62,36 @@ if (!Math) {
   _easycom_uni_card();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {};
+  return {
+    a: common_vendor.f($data.nowdata, (item, index, i0) => {
+      return {
+        a: common_vendor.t(item.title),
+        b: common_vendor.f(item.actag, (itemtag, indextag, i1) => {
+          return {
+            a: common_vendor.t(itemtag),
+            b: indextag
+          };
+        }),
+        c: common_vendor.t(item.ddl),
+        d: "0cadd2c0-0-" + i0,
+        e: item._id
+      };
+    }),
+    b: common_vendor.f($data.willdata, (item, index, i0) => {
+      return {
+        a: common_vendor.t(item.title),
+        b: common_vendor.f(item.actag, (itemtag, indextag, i1) => {
+          return {
+            a: common_vendor.t(itemtag),
+            b: indextag
+          };
+        }),
+        c: common_vendor.t(item.ddl),
+        d: "0cadd2c0-1-" + i0,
+        e: item._id
+      };
+    })
+  };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/activities/activities.vue"]]);
 wx.createPage(MiniProgramPage);

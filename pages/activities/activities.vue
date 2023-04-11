@@ -4,16 +4,19 @@
     <view class="section">
       正在进行中
     </view>
-    <uni-card>
+<!-- 这里是进行中的活动 -->
+    <view v-for="(item,index) in nowdata" :key="item._id">
+    
+
+    <uni-card @click="showDetail(item)">
       <view class="uni-card">
         <view>
-          <h3>Behere樱笋时寻声</h3>
+          <h3>{{item.title}}</h3>
           <view class="tag">
-            <text>歌手大赛</text>
-            <text>信息学部</text>
-            <text>很强</text>
+            <!-- 这里是活动的actag -->
+            <text v-for="(itemtag,indextag) in item.actag" :key="indextag">{{itemtag}}</text>
           </view>
-          <text>截止时间：4-8 22:00</text>
+          <text>{{item.ddl}}</text>
         </view>
         <view class="rightCard">
           <image src="../../static/1.png" style="width: 100rpx; height: 130rpx;"></image>
@@ -22,21 +25,25 @@
       </view>
     </uni-card>
 
+
+</view>
+<!-- 这里是进行中的活动的结束位置 -->
+<!-- 这里是即将到来的活动 -->
     <view class="line" style="transform: translateY(0rpx);"></view>
     <view class="section">
       即将到来
     </view>
+<view v-for="(item,index) in willdata" :key="item._id">
 
-    <uni-card>
+
+    <uni-card @click="showDetail(item)">
       <view class="uni-card">
         <view>
-          <h3>新计联谊</h3>
+          <h3>{{item.title}}</h3>
           <view class="tag">
-            <text>联谊</text>
-            <text>这是联谊</text>
-            <text>这是联谊啊啊啊</text>
+            <text v-for="(itemtag,indextag) in item.actag" :key="indextag">{{itemtag}}</text>
           </view>
-          <text>截止时间：4-21 23:59</text>
+          <text>{{item.ddl}}</text>
         </view>
         <view class="rightCard">
           <image src="../../static/2.png" style="width: 100rpx; height: 130rpx;"></image>
@@ -44,6 +51,9 @@
         </view>
       </view>
     </uni-card>
+</view>
+<!-- 这里是即将到来的活动的结束位置 -->
+
 
   </view>
 </template>
@@ -53,6 +63,10 @@
     components: {},
     data() {
       return {
+        //渲染数据
+        firstdata:[],
+        nowdata:[],
+        willdata:[],
         // cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
         avatar: [
           'https://img1.baidu.com/it/u=2407625550,1485951297&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1680627600&t=2d3299bc86c91a1048d93cf01096bc15',
@@ -66,6 +80,11 @@
       }
     },
     methods: {
+      showDetail(item){
+        uni.navigateTo({
+        	"url":`../activeDetail/activeDetail?_id=${item._id}`
+        })
+      },
       onClick(e) {
         uni.navigateTo({
           url: '../formPage/formPage'
@@ -77,6 +96,25 @@
           icon: 'none'
         })
       }
+    },
+    mounted() {
+      uniCloud.callFunction({
+        name: 'detail-activities'
+      }).then((res) => {
+        this.firstdata = res.result.data
+        for(let i = 0;i<this.firstdata.length;i++){
+          if(this.firstdata[i].isdoing==="now"){
+            this.nowdata.push(this.firstdata[i])
+          }else{
+            this.willdata.push(this.firstdata[i])
+          }
+        }
+        console.log(this.nowdata)
+        console.log(this.willdata)
+        console.log(res.result.data)
+      }).catch((err) => {
+        console.error(err)
+      })
     }
   }
 </script>

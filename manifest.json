@@ -1,6 +1,6 @@
 {
     "name" : "myApp",
-    "appid" : "__UNI__B72EE7B",
+    "appid" : "__UNI__5DFC08B",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -65,8 +65,7 @@
     "quickapp" : {},
     /* 快应用特有相关 */
     "mp-weixin" : {
-        /* 小程序特有相关 */
-        "appid" : "wx49a7314c1ee9082c",
+        "appid" : "wx6591205472f1be1e",
         "setting" : {
             "urlCheck" : false
         },
