@@ -127,12 +127,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       name: "newPassword2"
     }),
     n: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    o: common_vendor.sr("form", "547f271c-0"),
+    o: common_vendor.sr("form", "d288fc6e-0"),
     p: common_vendor.p({
       value: $data.formData,
       ["err-show-type"]: "toast"
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd.vue"]]);
 wx.createPage(MiniProgramPage);

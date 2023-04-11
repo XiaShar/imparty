@@ -1,0 +1,8 @@
+{
+  "name": "doUniPush",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {},
+    "uni-cloud-push": {}
+  }
+}

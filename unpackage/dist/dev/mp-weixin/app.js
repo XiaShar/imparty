@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
-const uni_modules_uniIdPages_init = require("./uni_modules/uni-id-pages/init.js");
-require("./uni_modules/uni-id-pages/config.js");
+require("./uni_modules/uni-id-pages/init.js");
 if (!Math) {
   "./pages/profile/index.js";
   "./pages/profile/editingView.js";
@@ -27,9 +26,24 @@ if (!Math) {
   "./uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.js";
 }
 const _sfc_main = {
-  onLaunch: async function() {
+  onLaunch: function() {
     console.log("App Launch");
-    await uni_modules_uniIdPages_init.uniIdPageInit();
+    common_vendor.index.onPushMessage((res) => {
+      console.log("收到推送消息：", res);
+    });
+    common_vendor.index.getPushClientId({
+      success: (res) => {
+        let push_clientid = res.cid;
+        common_vendor.Ls.callFunction({
+          name: "doUniPush",
+          data: { pushCliendId: push_clientid }
+        });
+        console.log("客户端推送标识:", push_clientid);
+      },
+      fail(err) {
+        console.log(err);
+      }
+    });
   },
   onShow: function() {
     console.log("App Show");
@@ -38,7 +52,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/86183/Desktop/hbuilder/Git/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {
