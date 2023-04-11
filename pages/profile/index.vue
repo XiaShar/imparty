@@ -12,7 +12,7 @@
 					{{ userInfo.nickname }}
 				</view>
 				<view class="detail">
-					2021级 计算机学院
+					
 				</view>
 			</view>
 			<view class="edit-icon" @click="editInfo()">

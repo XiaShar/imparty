@@ -27,7 +27,7 @@
       即将到来
     </view>
 
-    <uni-card>
+    <uni-card @click="showDetail()">
       <view class="uni-card">
         <view>
           <h3>新计联谊</h3>
@@ -76,7 +76,7 @@
           title: text,
           icon: 'none'
         })
-      }
+      },
     }
   }
 </script>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "uni-id-pages-avatar": "../../uni_modules/uni-id-pages/components/uni-id-pages-avatar/uni-id-pages-avatar",
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card"
+  }
+}
