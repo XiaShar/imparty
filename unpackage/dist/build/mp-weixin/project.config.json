@@ -1,8 +1,12 @@
 {
   "description": "项目配置文件。",
   "packOptions": {
+<<<<<<< HEAD
+    "ignore": []
+=======
     "ignore": [],
     "include": []
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660
   },
   "setting": {
     "urlCheck": false,
@@ -10,6 +14,31 @@
     "postcss": false,
     "minified": false,
     "newFeature": true,
+<<<<<<< HEAD
+    "bigPackageSizeSupport": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wx6591205472f1be1e",
+  "projectname": "myApp",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+=======
     "bigPackageSizeSupport": true,
     "babelSetting": {
       "ignore": [],
@@ -26,5 +55,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660
   }
 }

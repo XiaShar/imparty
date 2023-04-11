@@ -4,6 +4,10 @@ const _sfc_main = {
   components: {},
   data() {
     return {
+      //渲染数据
+      firstdata: [],
+      nowdata: [],
+      willdata: [],
       // cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
       avatar: [
         "https://img1.baidu.com/it/u=2407625550,1485951297&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1680627600&t=2d3299bc86c91a1048d93cf01096bc15",
@@ -56,6 +60,25 @@ const _sfc_main = {
       });
     }
   },
+<<<<<<< HEAD
+  mounted() {
+    common_vendor.Ls.callFunction({
+      name: "detail-activities"
+    }).then((res) => {
+      this.firstdata = res.result.data;
+      for (let i = 0; i < this.firstdata.length; i++) {
+        if (this.firstdata[i].isdoing === "now") {
+          this.nowdata.push(this.firstdata[i]);
+        } else {
+          this.willdata.push(this.firstdata[i]);
+        }
+      }
+      console.log(this.nowdata);
+      console.log(this.willdata);
+      console.log(res.result.data);
+    }).catch((err) => {
+      console.error(err);
+=======
   trigger(e) {
     console.log(e);
     this.content[e.index].active = !e.item.active;
@@ -69,6 +92,7 @@ const _sfc_main = {
           console.log("用户点击取消");
         }
       }
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660
     });
   }
 };
@@ -84,6 +108,35 @@ if (!Math) {
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
+<<<<<<< HEAD
+    a: common_vendor.f($data.nowdata, (item, index, i0) => {
+      return {
+        a: common_vendor.t(item.title),
+        b: common_vendor.f(item.actag, (itemtag, indextag, i1) => {
+          return {
+            a: common_vendor.t(itemtag),
+            b: indextag
+          };
+        }),
+        c: common_vendor.t(item.ddl),
+        d: "0cadd2c0-0-" + i0,
+        e: item._id
+      };
+    }),
+    b: common_vendor.f($data.willdata, (item, index, i0) => {
+      return {
+        a: common_vendor.t(item.title),
+        b: common_vendor.f(item.actag, (itemtag, indextag, i1) => {
+          return {
+            a: common_vendor.t(itemtag),
+            b: indextag
+          };
+        }),
+        c: common_vendor.t(item.ddl),
+        d: "0cadd2c0-1-" + i0,
+        e: item._id
+      };
+=======
     a: common_vendor.o(($event) => _ctx.showDetail()),
     b: common_vendor.sr("fab", "58407b89-2"),
     c: common_vendor.o(_ctx.trigger),
@@ -94,6 +147,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       horizontal: _ctx.horizontal,
       vertical: _ctx.vertical,
       direction: _ctx.direction
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660
     })
   };
 }
