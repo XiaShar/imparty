@@ -3,6 +3,30 @@
 		onLaunch: function() {
 			console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
 			console.log('App Launch')
+      
+      
+      
+      uni.getPushClientId({
+      	success: (res) => {
+      		let push_clientid = res.cid
+          uniCloud.callFunction({
+            name:'doUniPush',
+            data:{pushCliendId:push_clientid}
+          })
+      		console.log('客户端推送标识:',push_clientid)
+      	},
+      	fail(err) {
+      		console.log(err)
+      	}
+      })
+      
+      
+      
+      
+      
+      uni.onPushMessage((res) => {
+      			console.log("收到推送消息：",res) //监听推送消息
+      		})
 		},
 		onShow: function() {
 			console.log('App Show')

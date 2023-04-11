@@ -18,8 +18,6 @@
       </view>
     </uni-card>
 
-
-
     <uni-card style="overflow:visible; padding-bottom:25rpx; margin-top: 60rpx; border-radius: 20rpx;">
       <view>
         <view class="card-icon">
