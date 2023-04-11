@@ -202,7 +202,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       required: true,
       modelValue: $data.formData.password2
     }),
-    t: common_vendor.sr("shortCode", "2a55c758-10,2a55c758-9"),
+    t: common_vendor.sr("shortCode", "45787906-10,45787906-9"),
     v: common_vendor.o(($event) => $data.formData.code = $event),
     w: common_vendor.p({
       email: $data.formData.email,
@@ -212,7 +212,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     x: common_vendor.p({
       name: "code"
     }),
-    y: common_vendor.sr("agreements", "2a55c758-11,2a55c758-0"),
+    y: common_vendor.sr("agreements", "45787906-11,45787906-0"),
     z: common_vendor.p({
       scope: "register"
     }),
@@ -220,7 +220,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     B: common_vendor.o((...args) => $options.navigateBack && $options.navigateBack(...args)),
     C: common_vendor.o((...args) => $options.registerByUserName && $options.registerByUserName(...args)),
     D: common_vendor.o((...args) => $options.toLogin && $options.toLogin(...args)),
-    E: common_vendor.sr("form", "2a55c758-0"),
+    E: common_vendor.sr("form", "45787906-0"),
     F: common_vendor.p({
       value: $data.formData,
       rules: $data.rules,
@@ -229,5 +229,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/register/register-by-email.vue"]]);
 wx.createPage(MiniProgramPage);

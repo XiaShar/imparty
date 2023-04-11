@@ -54,24 +54,27 @@ if (!Math) {
   (_easycom_uni_id_pages_avatar + _easycom_uni_card)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {
+  return common_vendor.e({
     a: common_vendor.p({
       width: "100rpx",
       height: "100rpx"
     }),
-    b: common_vendor.t($options.userInfo.nickname),
-    c: common_assets._imports_0,
-    d: common_vendor.o(($event) => $options.editInfo()),
-    e: $data.icon.pre,
-    f: $data.icon.ing,
-    g: $data.icon.ed,
-    h: $data.icon.info,
-    i: $data.icon.rightArrow,
-    j: $data.icon.setting,
+    b: !$options.userInfo.nickname
+  }, !$options.userInfo.nickname ? {} : {}, {
+    c: common_vendor.t($options.userInfo.nickname),
+    d: common_vendor.t($options.userInfo.school),
+    e: common_assets._imports_0,
+    f: common_vendor.o(($event) => $options.editInfo()),
+    g: $data.icon.pre,
+    h: $data.icon.ing,
+    i: $data.icon.ed,
+    j: $data.icon.info,
     k: $data.icon.rightArrow,
-    l: $data.icon.about,
-    m: $data.icon.rightArrow
-  };
+    l: $data.icon.setting,
+    m: $data.icon.rightArrow,
+    n: $data.icon.about,
+    o: $data.icon.rightArrow
+  });
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/profile/index.vue"]]);
 wx.createPage(MiniProgramPage);

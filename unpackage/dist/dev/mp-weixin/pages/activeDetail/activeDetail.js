@@ -36,11 +36,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.t(item.title),
         b: common_vendor.t(item.masteratti.join(",")),
         c: common_vendor.t(item.aligintitle),
-        d: "31c83c40-0-" + i0,
+        d: "9f96ab6e-0-" + i0,
         e: common_vendor.t(item.description),
-        f: "31c83c40-1-" + i0,
+        f: "9f96ab6e-1-" + i0,
         g: common_vendor.t(item.known),
-        h: "31c83c40-2-" + i0,
+        h: "9f96ab6e-2-" + i0,
         i: common_vendor.f(item.requirement, (mitem, mindex, i1) => {
           return {
             a: common_vendor.t(mitem.index),
@@ -48,7 +48,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             c: mitem.mindex
           };
         }),
-        j: "31c83c40-3-" + i0
+        j: "9f96ab6e-3-" + i0
       };
     }),
     b: common_assets._imports_0$1,
@@ -57,5 +57,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     e: $data.dedata.id
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/activeDetail/activeDetail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/activeDetail/activeDetail.vue"]]);
 wx.createPage(MiniProgramPage);

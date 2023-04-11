@@ -128,8 +128,10 @@
 			],
 			"title": "性别",
 			"permission": {
-				"read": "doc._id == auth.uid || 'READ_UNI_ID_USERS' in auth.permission",
-				"write": "'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
+				// "read": "doc._id == auth.uid || 'READ_UNI_ID_USERS' in auth.permission",
+				// "write": "'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
+				"read": true,
+				"write": "doc._id == auth.uid || 'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
 			}
 		},
 		"invite_time": {
@@ -212,6 +214,15 @@
 				"read": true,
 				"write": "doc._id == auth.uid || 'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
 			}
+		},
+		"school": {
+			"bsonType": "string",
+			"description": "学院",
+			"title": "学院",
+			"trim": "both",
+			"permission": {
+				"read": true,
+				"write": "doc._id == auth.uid || 'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
 		},
 		"password": {
 			"bsonType": "password",

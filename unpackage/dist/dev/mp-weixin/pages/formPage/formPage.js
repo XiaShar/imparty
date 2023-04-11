@@ -95,5 +95,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-6565de86"], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/formPage/formPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-6565de86"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/formPage/formPage.vue"]]);
 wx.createPage(MiniProgramPage);

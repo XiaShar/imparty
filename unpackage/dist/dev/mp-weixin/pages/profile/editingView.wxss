@@ -19,7 +19,6 @@
 }
 .line {
 		position: relative;
-		right: -50rpx;
 		background-color: gray;
 		height: 1px;
 		width: 650rpx;
@@ -46,6 +45,7 @@
 		flex-direction: column;
 }
 .subButn{
+		color: white;
 		width: 70%;
 		height: 75rpx;
 		border-radius: 20px;
@@ -53,6 +53,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #FCA464;
+		opacity: 0.9;
 		font-size: 30rpx;
 }
 .logoutButn{
@@ -68,4 +69,7 @@
 		opacity: 0.5;
 		font-size: 30rpx;
 }
-
+.container{
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+}

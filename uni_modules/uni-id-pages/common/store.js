@@ -19,7 +19,7 @@ export const mutations = {
 	async updateUserInfo(data = false) {
 		if (data) {
 			usersTable.where('_id==$env.uid').update(data).then(e => {
-				// console.log(e);
+				
 				if (e.result.updated) {
 					uni.showToast({
 						title: "更新成功",
@@ -42,7 +42,7 @@ export const mutations = {
 			})
 			try {
 				let res = await usersTable.where("'_id' == $cloudEnv_uid")
-					.field('mobile,nickname,username,email,avatar_file')
+					.field('mobile,nickname,username,email,avatar_file,gender,school')
 					.get()
 
 				const realNameRes = await uniIdCo.getRealNameInfo()
@@ -79,7 +79,7 @@ export const mutations = {
 		uni.removeStorageSync('uni_id_token');
 		uni.setStorageSync('uni_id_token_expired', 0)
 		uni.redirectTo({
-			url: `/${pagesJson.uniIdRouter?.loginPage ?? 'uni_modules/uni-id-pages/pages/login/login-withoutpwd'}`,
+			url: 'uni_modules/uni-id-pages/pages/login/login-withpwd',
 		});
 		uni.$emit('uni-id-pages-logout')
 		this.setUserInfo({},{cover:true})

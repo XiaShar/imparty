@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 button.data-v-2c86b420{border-radius:10px;background-color:#00bfff;margin-right:1%;font-size:10rpx}checkbox.data-v-2c86b420{top:50%;bottom:50%;margin-left:1%;transform:scale(.5)}text.data-v-2c86b420{margin-top:3%}.footer.data-v-2c86b420{display:flex;align-items:center;justify-content:center;border:1rpx solid black}.footer text.data-v-2c86b420{margin-bottom:20rpx}
+=======
+button.data-v-4f15ea4a{border-radius:10px;background-color:#00bfff;margin-right:1%;font-size:10rpx}checkbox.data-v-4f15ea4a{top:50%;bottom:50%;margin-left:1%;transform:scale(.5)}text.data-v-4f15ea4a{margin-top:3%}.footer.data-v-4f15ea4a{display:flex;align-items:center;justify-content:center;border:1rpx solid black}.footer text.data-v-4f15ea4a{margin-bottom:20rpx}
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660

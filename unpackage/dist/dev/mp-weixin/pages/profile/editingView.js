@@ -10,7 +10,7 @@ const _sfc_main = {
       dynamicFormData: {
         name: uni_modules_uniIdPages_common_store.store.userInfo.nickname,
         gender: uni_modules_uniIdPages_common_store.store.userInfo.gender,
-        school: uni_modules_uniIdPages_common_store.store.userInfo.comment,
+        school: uni_modules_uniIdPages_common_store.store.userInfo.school,
         birthday: "",
         phone: uni_modules_uniIdPages_common_store.store.userInfo.phone,
         email: uni_modules_uniIdPages_common_store.store.userInfo.email
@@ -73,7 +73,8 @@ const _sfc_main = {
     submit(ref) {
       uni_modules_uniIdPages_common_store.mutations.updateUserInfo({
         nickname: this.dynamicFormData.name,
-        gender: this.dynamicFormData.gender
+        gender: this.dynamicFormData.gender,
+        school: this.dynamicFormData.school
       });
     },
     updatePhone() {
@@ -168,7 +169,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "邮箱",
       name: "email"
     }),
-    s: common_vendor.sr("dynamicForm", "51830af0-0"),
+    s: common_vendor.sr("dynamicForm", "19e7f49e-0"),
     t: common_vendor.p({
       rules: $data.dynamicRules,
       model: $data.dynamicFormData,
@@ -178,5 +179,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     w: common_vendor.o(($event) => $options.logout())
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/editingView.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/profile/editingView.vue"]]);
 wx.createPage(MiniProgramPage);

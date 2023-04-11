@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="container">
 		<uni-forms ref="dynamicForm" :rules="dynamicRules" :model="dynamicFormData" label-position="top">
 <!-- 			<view class="title">
 				<text style="margin-top: auto;margin-bottom: auto;margin-left: 50rpx;">头像</text>
@@ -49,8 +49,8 @@
 
 		</uni-forms>
 		<view class="button-group">
-			<button type="primary" class="subButn" size="mini" @click="submit('dynamicForm')">提交</button>
-			<button class="logoutButn" size="mini" @click="logout()">登出</button>
+			<button class="subButn" size="default" @click="submit('dynamicForm')">提交</button>
+			<button class="logoutButn" size="default" @click="logout()">登出</button>
 		</view>
 	</view>
 </template>
@@ -70,7 +70,7 @@
 				dynamicFormData: {
 					name: store.userInfo.nickname,
 					gender: store.userInfo.gender,
-					school: store.userInfo.comment,
+					school: store.userInfo.school,
 					birthday: "",
 					phone: store.userInfo.phone,
 					email: store.userInfo.email
@@ -137,7 +137,8 @@
 				// })
 				mutations.updateUserInfo({
 					nickname: this.dynamicFormData.name,
-					gender: this.dynamicFormData.gender
+					gender: this.dynamicFormData.gender,
+					school: this.dynamicFormData.school
 				})
 			},
 			
@@ -174,7 +175,6 @@
 
 	.line {
 		position: relative;
-		right: -50rpx;
 		background-color: gray;
 		height: 1px;
 		width: 650rpx;
@@ -206,6 +206,7 @@
 	}
 	
 	.subButn{
+		color: white;
 		width: 70%;
 		height: 75rpx;
 		border-radius: 20px;
@@ -213,6 +214,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: #FCA464;
+		opacity: 0.9;
 		font-size: 30rpx;
 	}
 	
@@ -229,5 +231,8 @@
 		opacity: 0.5;
 		font-size: 30rpx;
 	}
-
+	.container{
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+	}
 </style>

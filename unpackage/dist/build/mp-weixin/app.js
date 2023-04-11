@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 "use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./common/vendor.js");require("./uni_modules/uni-id-pages/init.js"),Math;const e={onLaunch:function(){console.log("App Launch"),o.index.onPushMessage((o=>{console.log("收到推送消息：",o)})),o.index.getPushClientId({success:e=>{let n=e.cid;o.Ls.callFunction({name:"doUniPush",data:{pushCliendId:n}}),console.log("客户端推送标识:",n)},fail(o){console.log(o)}})},onShow:function(){console.log("App Show")},onHide:function(){console.log("App Hide")}};function n(){return{app:o.createSSRApp(e)}}n().app.mount("#app"),exports.createApp=n;
+=======
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=require("./common/vendor.js"),o=require("./uni_modules/uni-id-pages/init.js");require("./uni_modules/uni-id-pages/config.js"),Math;const e={onLaunch:async function(){console.log("App Launch"),await o.uniIdPageInit()},onShow:function(){console.log("App Show")},onHide:function(){console.log("App Hide")}};function i(){return{app:n.createSSRApp(e)}}i().app.mount("#app"),exports.createApp=i;
+>>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660

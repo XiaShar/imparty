@@ -8,11 +8,14 @@
 				<uni-id-pages-avatar width="100rpx" height="100rpx"></uni-id-pages-avatar>
 			</view>
 			<view class="title-area">
+				<view class="name" v-if="!userInfo.nickname">
+					点击右侧登录
+				</view>
 				<view class="name">
 					{{ userInfo.nickname }}
 				</view>
 				<view class="detail">
-					2021级 计算机学院
+					{{ userInfo.school }}
 				</view>
 			</view>
 			<view class="edit-icon" @click="editInfo()">
