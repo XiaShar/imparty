@@ -16,7 +16,7 @@
           <text>截止时间：4-8 22:00</text>
         </view>
         <view class="rightCard">
-          <img src="../../static/1.png" alt="">
+          <image src="../../static/1.png" style="width: 100rpx; height: 130rpx;"></image>
           <text style="width: 100rpx;overflow: hidden;text-overflow: clip;;white-space: nowrap;">联合活动</text>
         </view>
       </view>
@@ -39,7 +39,7 @@
           <text>截止时间：4-21 23:59</text>
         </view>
         <view class="rightCard">
-          <img src="../../static/2.png" alt="">
+          <image src="../../static/2.png" style="width: 100rpx; height: 130rpx;"></image>
           <text style="width: 100rpx;overflow: hidden;text-overflow: clip;;white-space: nowrap;">联合活动</text>
         </view>
       </view>
@@ -90,6 +90,7 @@
   }
 
   .tag {
+	
     display: flex;
     align-items: center;
   }
@@ -99,7 +100,7 @@
     padding: 2rpx;
     padding-left: 8rpx;
     padding-right: 8rpx;
-    font-size: 5rpx;
+    font-size: 22rpx;
     background-color: rgba(220, 220, 220, 0.5);
     margin: 20rpx;
     margin-left: 0;
@@ -108,7 +109,7 @@
   .rightCard {
     position: absolute;
     width: 100rpx;
-    right: 20rpx;
+    right: 40rpx;
     display: flex;
     flex-direction: column;
     align-items: center;

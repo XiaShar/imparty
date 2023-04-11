@@ -31,8 +31,16 @@
 		padding: 10px;
 	}
 	
+	// @font-face {
+	//     font-family: myfont;
+	//     src: url('~@/static/TsangerYuYangT_W03_W03.ttf');
+		
+	// }
+	
+	/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
 	@font-face {
-	    font-family: myfont;
-	    src: url('~@/static/TsangerYuYangT_W03_W03.ttf');
+	  font-family: myfont;font-weight: 400;src: url("//at.alicdn.com/wf/webfont/NvHjKPz9AuKF/ioJnbDAuIJCD.woff2") format("woff2"),
+	  url("//at.alicdn.com/wf/webfont/NvHjKPz9AuKF/odLs42wWWNIO.woff") format("woff");
+	  font-display: swap;
 	}
 </style>

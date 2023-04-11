@@ -1,0 +1,26 @@
+/* 水平间距 */
+/* 水平间距 */
+button.data-v-6565de86 {
+  border-radius: 10px;
+  background-color: deepskyblue;
+  margin-right: 1%;
+  font-size: 10rpx;
+}
+checkbox.data-v-6565de86 {
+  top: 50%;
+  bottom: 50%;
+  margin-left: 1%;
+  transform: scale(0.5);
+}
+text.data-v-6565de86 {
+  margin-top: 3%;
+}
+.footer.data-v-6565de86 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid black;
+}
+.footer text.data-v-6565de86 {
+  margin-bottom: 20rpx;
+}
