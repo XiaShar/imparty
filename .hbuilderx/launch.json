@@ -12,7 +12,11 @@
      	},
      	"mp-weixin" : 
      	{
+<<<<<<< HEAD
      		"launchtype" : "remote"
+=======
+     		"launchtype" : "local"
+>>>>>>> 9ab4224159aa51bcc4d7dfdc42fb58bd026d319a
      	},
      	"type" : "uniCloud"
      }

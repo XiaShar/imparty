@@ -6,7 +6,18 @@ require("../../uni_modules/uni-id-pages/config.js");
 common_vendor.Ls.importObject("uni-id-co");
 const _sfc_main = {
   data() {
-    return {};
+    return {
+      icon1: "../../static/preAct.png",
+      icon: {
+        pre: "../../static/preAct.png",
+        ing: "../../static/acting.png",
+        ed: "../../static/endAct.png",
+        info: "../../static/info.png",
+        setting: "../../static/setting.png",
+        about: "../../static/about.png",
+        rightArrow: "../../static/rightArrow.png"
+      }
+    };
   },
   computed: {
     userInfo() {
@@ -51,15 +62,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     b: common_vendor.t($options.userInfo.nickname),
     c: common_assets._imports_0,
     d: common_vendor.o(($event) => $options.editInfo()),
-    e: common_assets._imports_1,
-    f: common_assets._imports_2,
-    g: common_assets._imports_3,
-    h: common_assets._imports_4,
-    i: common_assets._imports_5,
-    j: common_assets._imports_6,
-    k: common_assets._imports_5,
-    l: common_assets._imports_7,
-    m: common_assets._imports_5
+    e: $data.icon.pre,
+    f: $data.icon.ing,
+    g: $data.icon.ed,
+    h: $data.icon.info,
+    i: $data.icon.rightArrow,
+    j: $data.icon.setting,
+    k: $data.icon.rightArrow,
+    l: $data.icon.about,
+    m: $data.icon.rightArrow
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/index.vue"]]);

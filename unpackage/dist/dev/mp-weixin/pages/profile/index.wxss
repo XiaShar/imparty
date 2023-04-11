@@ -18,121 +18,113 @@
 		justify-content: center;
 		align-items: center;
 }
-.icon{
+.icon {
 		position: absolute;
-	    left: 50rpx;
-	    width: 100rpx;
-	    height: 100rpx;
-	    border-radius: 50%;
-	    overflow: hidden;
-	    border: 10rpx solid rgba(255, 255, 255, 0.6);
+		left: 50rpx;
+		width: 100rpx;
+		height: 100rpx;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 10rpx solid rgba(255, 255, 255, 0.6);
 }
-.icon img{
-	    width: 100%;
-	    height: 100%;
-	    object-fit: cover;
+.icon img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 }
-.title-area{
+.title-area {
 		font-family: "myfont";
 		color: white;
 		position: relative;
 		left: -80rpx;
 }
-.name{
+.name {
 		font-size: 35rpx;
 		font-weight: 600;
 }
-.detail{
+.detail {
 		font-size: 25rpx;
 }
-.edit-icon{
+.edit-icon {
 		position: absolute;
 		right: 50rpx;
 		width: 80rpx;
 		height: 80rpx;
 		border-radius: 50%;
-		background-color: rgba(0,0,0,0.5);
+		background-color: rgba(0, 0, 0, 0.5);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 }
-.edit-icon img{
-	    width: 60%;
-	    height: 60%;
+.edit-icon img {
+		width: 60%;
+		height: 60%;
 }
-.actCard{
+
+	/* 	.actCard{
 		position: absolute;
 		top: 270rpx;
 		border-radius: 5px;
-}
-.title{
-		
-		color: rgba(0,0,0,0.8);
+	}
+	 */
+.title {
+
+		color: rgba(0, 0, 0, 0.8);
 		font-size: 40rpx;
 		font-weight: 800;
 		margin-bottom: 40rpx;
 }
-.actList{
+.actList {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		height: 160rpx;
 }
-.actList img{
-		margin-top: 20rpx;
-	    width: 50%;
-	    height: auto;
-	    object-fit: cover;
-}
-.actList view{
+.actList view {
 		position: relative;
 		top: -15rpx;
 		font-family: "myfont";
 }
-button{
-		height: 200rpx;
-		background-color: rgba(0,0,0,0);
+button {
+		width: 200rpx;
+		height: 170rpx;
+		background-color: rgba(0, 0, 0, 0);
 }
-button::after{
+button::after {
 		border: none;
 }
-.settingCard{
+.settingCard {
 		border-radius: 5px;
 		position: absolute;
 		top: 800rpx;
 		width: 100%;
 }
-.settingList{
+.settingList {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		width: 100%;
 }
-.item{
+.item {
 		display: flex;
 		justify-content: space-between;
 
 		width: 100%;
 }
-.settingList img{
+.settingList img {
 		transform: translateX(-10rpx);
 		margin-top: 20rpx;
-	    width: auto;
-	    height: 50%;
+		width: auto;
+		height: 50%;
 }
-.item img{
+.item img {
 		margin-top: 20rpx;
-	    width: auto;
-	    height: 50%;
+		width: auto;
+		height: 50%;
 }
-.settingList button{
+.settingList button {
 		height: 100rpx;
 		display: flex;
 		width: 100%;
 }
-.adCard{
-		border-radius: 5px;
-		position: absolute;
-		top: 600rpx;
-		width: 100%;
-}
+

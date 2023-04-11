@@ -782,7 +782,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   }, $props.isShowRotateBtn ? common_vendor.e({
     z: _ctx.$slots.rotate
   }, _ctx.$slots.rotate ? {} : {
-    A: common_assets._imports_1$2
+    A: common_assets._imports_1$1
   }, {
     B: common_vendor.o((...args) => $options.rotate && $options.rotate(...args))
   }) : {}, {
