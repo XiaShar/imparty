@@ -6,7 +6,7 @@
   "usingComponents": {
     "uni-easyinput": "../../uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput",
     "uni-forms-item": "../../uni_modules/uni-forms/components/uni-forms-item/uni-forms-item",
-    "uni-forms": "../../uni_modules/uni-forms/components/uni-forms/uni-forms",
-    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card"
+    "hpy-form-select": "../../uni_modules/hpy-form-select/components/hpy-form-select/hpy-form-select",
+    "uni-forms": "../../uni_modules/uni-forms/components/uni-forms/uni-forms"
   }
 }

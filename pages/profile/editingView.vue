@@ -34,17 +34,15 @@
 			
 			<view class="line" style="transform: translateY(-35rpx);"></view>	
 			
-			<uni-forms-item label="手机号" name="phone" class="item" >
+			<!-- <uni-forms-item label="手机号" name="phone" class="item" >
 				<view style="height: 60rpx; width: 100%;" @click="updatePhone()" >{{ dynamicFormData.phone }}</view>
+			</uni-forms-item> -->
+			<uni-forms-item label="电话" name="phone" class="item">
+				<uni-easyinput v-model="dynamicFormData.phone" :inputBorder="false" :clearSize="20" :styles="{backgroundColor:'#f5f5f5'}" :clearable="false"/>
 			</uni-forms-item>
 			
 			<view class="line" style="transform: translateY(-35rpx);"></view>
-			
-			<uni-forms-item label="邮箱" name="email" class="item">
-				<uni-easyinput v-model="dynamicFormData.email" :inputBorder="false" :styles="{backgroundColor:'#f5f5f5'}" :clearable="false"/>
-			</uni-forms-item>
-			
-			<view class="line" style="transform: translateY(-35rpx);"></view>
+
 
 
 		</uni-forms>
@@ -139,7 +137,8 @@
 				mutations.updateUserInfo({
 					nickname: this.dynamicFormData.name,
 					gender: this.dynamicFormData.gender,
-					school: this.dynamicFormData.school
+					school: this.dynamicFormData.school,
+					phone: this.dynamicFormData.phone,
 				})
 			},
 			

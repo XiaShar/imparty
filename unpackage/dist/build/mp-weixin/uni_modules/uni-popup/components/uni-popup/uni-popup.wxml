@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<view wx:if="{{a}}" class="{{['uni-popup', k, l]}}"><view bindtouchstart="{{j}}"><uni-transition wx:if="{{b}}" key="1" bindclick="{{c}}" u-i="1fa933e1-0" bind:__l="__l" u-p="{{d}}"/><uni-transition wx:if="{{i}}" u-s="{{['d']}}" key="2" bindclick="{{h}}" u-i="1fa933e1-1" bind:__l="__l" u-p="{{i}}"><view style="{{'background-color:' + e}}" class="{{['uni-popup__wrapper', f]}}" bindtap="{{g}}"><slot/></view></uni-transition></view></view>
-=======
 <view wx:if="{{a}}" class="{{['uni-popup', k, l]}}"><view bindtouchstart="{{j}}"><uni-transition wx:if="{{b}}" key="1" bindclick="{{c}}" u-i="1c36f718-0" bind:__l="__l" u-p="{{d}}"/><uni-transition wx:if="{{i}}" u-s="{{['d']}}" key="2" bindclick="{{h}}" u-i="1c36f718-1" bind:__l="__l" u-p="{{i}}"><view style="{{'background-color:' + e}}" class="{{['uni-popup__wrapper', f]}}" bindtap="{{g}}"><slot/></view></uni-transition></view></view>
->>>>>>> d53ff959617b4b38dfdf7df7be52bcac881d5660

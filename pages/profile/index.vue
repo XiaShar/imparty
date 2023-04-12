@@ -30,15 +30,15 @@
 					</view>
 					<view class="actList">
 						<button>
-							<image :src="icon.pre" style="width: 100rpx; height: 50%;"></image>
+							<image :src="icon.pre" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">已预约</view>
 						</button>
 						<button>
-							<image :src="icon.ing" style="width: 100rpx; height: 50%;"></image>
+							<image :src="icon.ing" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">进行中</view>
 						</button>
 						<button>
-							<image :src="icon.ed" style="width: 100rpx; height: 50%;"></image>
+							<image :src="icon.ed" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">已结束</view>
 						</button>
 					</view>
@@ -135,7 +135,7 @@
 			editInfo() {
 				if (uniCloud.getCurrentUserInfo().uid === null) {
 					uni.navigateTo({
-						url: "/uni_modules/uni-id-pages/pages/login/login-withpwd"
+						url: "/uni_modules/uni-id-pages/pages/login/login"
 					})
 				} else {
 					uni.navigateTo({
@@ -159,7 +159,7 @@
 
 	.container {
 		position: absolute;
-		top: 100rpx;
+		top: 120rpx;
 		width: 100%;
 		height: 200rpx;
 		overflow-x: hidden;

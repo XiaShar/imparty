@@ -75,7 +75,8 @@ const _sfc_main = {
       uni_modules_uniIdPages_common_store.mutations.updateUserInfo({
         nickname: this.dynamicFormData.name,
         gender: this.dynamicFormData.gender,
-        school: this.dynamicFormData.school
+        school: this.dynamicFormData.school,
+        phone: this.dynamicFormData.phone
       });
     },
     updatePhone() {
@@ -151,24 +152,19 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "生日",
       name: "birthday"
     }),
-    m: common_vendor.t($data.dynamicFormData.phone),
-    n: common_vendor.o(($event) => $options.updatePhone()),
-    o: common_vendor.p({
-      label: "手机号",
-      name: "phone"
-    }),
-    p: common_vendor.o(($event) => $data.dynamicFormData.email = $event),
-    q: common_vendor.p({
+    m: common_vendor.o(($event) => $data.dynamicFormData.phone = $event),
+    n: common_vendor.p({
       inputBorder: false,
+      clearSize: 20,
       styles: {
         backgroundColor: "#f5f5f5"
       },
       clearable: false,
-      modelValue: $data.dynamicFormData.email
+      modelValue: $data.dynamicFormData.phone
     }),
-    r: common_vendor.p({
-      label: "邮箱",
-      name: "email"
+    o: common_vendor.p({
+      label: "电话",
+      name: "phone"
     }),
     s: common_vendor.sr("dynamicForm", "51830af0-0"),
     t: common_vendor.p({
@@ -176,8 +172,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       model: $data.dynamicFormData,
       ["label-position"]: "top"
     }),
-    v: common_vendor.o(($event) => $options.submit("dynamicForm")),
-    w: common_vendor.o(($event) => $options.logout())
+    r: common_vendor.o(($event) => $options.submit("dynamicForm")),
+    s: common_vendor.o(($event) => $options.logout())
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/editingView.vue"]]);

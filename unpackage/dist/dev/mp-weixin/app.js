@@ -4,9 +4,10 @@ const common_vendor = require("./common/vendor.js");
 const uni_modules_uniIdPages_init = require("./uni_modules/uni-id-pages/init.js");
 require("./uni_modules/uni-id-pages/config.js");
 if (!Math) {
-  "./pages/profile/index.js";
-  "./pages/profile/editingView.js";
   "./pages/activities/activities.js";
+  "./pages/profile/index.js";
+  "./pages/profile/myActivity/myActivity.js";
+  "./pages/profile/editingView.js";
   "./pages/formPage/formPage.js";
   "./pages/activeDetail/activeDetail.js";
   "./uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate.js";
@@ -25,6 +26,7 @@ if (!Math) {
   "./uni_modules/uni-id-pages/pages/register/register-admin.js";
   "./uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.js";
   "./uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.js";
+  "./pages/profile/myActivity/myActivity.js";
 }
 const _sfc_main = {
   onLaunch: async function() {

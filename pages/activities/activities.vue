@@ -1,4 +1,6 @@
 <template>
+	<view class="bg" style="transform: translate(-400rpx,-400rpx);"></view>
+	<view class="bg" style="transform: translate(500rpx,900rpx);"></view>
 
 	<view>
 		<view class="line" style="transform: translateY(0rpx);"></view>
@@ -195,5 +197,15 @@
 		margin-left: 30rpx;
 		font-family: "myfont";
 		font-size: 40rpx;
+	}
+	
+	.bg{
+		position: fixed;
+
+		width: 800rpx;
+		height: 800rpx;
+		background-color: #FCA464;
+		z-index: -1;
+		border-radius: 100%;
 	}
 </style>
