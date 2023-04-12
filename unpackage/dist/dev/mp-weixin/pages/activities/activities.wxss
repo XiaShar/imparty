@@ -48,3 +48,12 @@
 		font-family: "myfont";
 		font-size: 40rpx;
 }
+.bg{
+		position: fixed;
+
+		width: 800rpx;
+		height: 800rpx;
+		background-color: #FCA464;
+		z-index: -1;
+		border-radius: 100%;
+}

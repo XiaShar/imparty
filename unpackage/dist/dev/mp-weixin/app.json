@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/activities/activities",
     "pages/profile/index",
     "pages/profile/editingView",
-    "pages/activities/activities",
     "pages/formPage/formPage",
     "pages/activeDetail/activeDetail",
     "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate",

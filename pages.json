@@ -1,5 +1,19 @@
 {
 	"pages": [
+		
+		{
+			"path": "pages/activities/activities",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTextStyle": "black",
+				"navigationBarTitleText": "活动列表",
+				"navigationBarBackgroundColor": "#F8F8F8",
+				"backgroundColor": "#F8F8F8",
+				"app-plus": {
+					"background": "#efeff4"
+				}
+			}
+		},
 		{
 			"path": "pages/profile/index",
 			"style": {
@@ -14,19 +28,7 @@
 			}
 
 		},
-		{
-			"path": "pages/activities/activities",
-			"style": {
-				"enablePullDownRefresh": true,
-				"navigationBarTextStyle": "black",
-				"navigationBarTitleText": "活动列表",
-				"navigationBarBackgroundColor": "#F8F8F8",
-				"backgroundColor": "#F8F8F8",
-				"app-plus": {
-					"background": "#efeff4"
-				}
-			}
-		},
+		
 		{
 			"path": "pages/formPage/formPage",
 			"style": {

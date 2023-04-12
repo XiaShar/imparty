@@ -16566,19 +16566,6 @@ const appid = "__UNI__5DFC08B";
 }
 const pages = [
   {
-    path: "pages/profile/index",
-    style: {
-      navigationBarTitleText: "我的"
-    }
-  },
-  {
-    path: "pages/profile/editingView",
-    style: {
-      navigationBarTitleText: "",
-      enablePullDownRefresh: false
-    }
-  },
-  {
     path: "pages/activities/activities",
     style: {
       enablePullDownRefresh: true,
@@ -16589,6 +16576,19 @@ const pages = [
       "app-plus": {
         background: "#efeff4"
       }
+    }
+  },
+  {
+    path: "pages/profile/index",
+    style: {
+      navigationBarTitleText: "我的"
+    }
+  },
+  {
+    path: "pages/profile/editingView",
+    style: {
+      navigationBarTitleText: "",
+      enablePullDownRefresh: false
     }
   },
   {
