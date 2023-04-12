@@ -2,6 +2,7 @@
   "pages": [
     "pages/activities/activities",
     "pages/profile/index",
+    "pages/profile/myActivity",
     "pages/profile/editingView",
     "pages/formPage/formPage",
     "pages/activeDetail/activeDetail",
