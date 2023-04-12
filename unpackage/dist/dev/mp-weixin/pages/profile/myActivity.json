@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的活动",
+  "usingComponents": {
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card"
+  }
+}

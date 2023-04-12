@@ -1,0 +1,7 @@
+{
+  "name": "getMyActivity",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

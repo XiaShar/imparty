@@ -6,7 +6,7 @@ require("./uni_modules/uni-id-pages/config.js");
 if (!Math) {
   "./pages/activities/activities.js";
   "./pages/profile/index.js";
-  "./pages/profile/myActivity/myActivity.js";
+  "./pages/profile/myActivity.js";
   "./pages/profile/editingView.js";
   "./pages/formPage/formPage.js";
   "./pages/activeDetail/activeDetail.js";
@@ -26,7 +26,6 @@ if (!Math) {
   "./uni_modules/uni-id-pages/pages/register/register-admin.js";
   "./uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd.js";
   "./uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify.js";
-  "./pages/profile/myActivity/myActivity.js";
 }
 const _sfc_main = {
   onLaunch: async function() {

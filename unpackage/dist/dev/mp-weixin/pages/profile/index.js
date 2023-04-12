@@ -40,6 +40,11 @@ const _sfc_main = {
           url: "./editingView"
         });
       }
+    },
+    showMyActivity(goal) {
+      common_vendor.index.navigateTo({
+        url: `./myActivity?scene=${goal}`
+      });
     }
   }
 };
@@ -66,14 +71,17 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     e: common_assets._imports_0,
     f: common_vendor.o(($event) => $options.editInfo()),
     g: $data.icon.pre,
-    h: $data.icon.ing,
-    i: $data.icon.ed,
-    j: $data.icon.info,
-    k: $data.icon.rightArrow,
-    l: $data.icon.setting,
-    m: $data.icon.rightArrow,
-    n: $data.icon.about,
-    o: $data.icon.rightArrow
+    h: common_vendor.o(($event) => $options.showMyActivity("will")),
+    i: $data.icon.ing,
+    j: common_vendor.o(($event) => $options.showMyActivity("now")),
+    k: $data.icon.ed,
+    l: common_vendor.o(($event) => $options.showMyActivity("end")),
+    m: $data.icon.info,
+    n: $data.icon.rightArrow,
+    o: $data.icon.setting,
+    p: $data.icon.rightArrow,
+    q: $data.icon.about,
+    r: $data.icon.rightArrow
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/profile/index.vue"]]);

@@ -5,10 +5,10 @@
 	<view>
 		<view class="line" style="transform: translateY(0rpx);"></view>
 		<view class="section">
-			正在进行中
+			{{ title }}
 		</view>
 		<!-- 这里是进行中的活动 -->
-		<view v-for="(item,index) in nowdata" :key="item._id">
+		<view v-for="(item,index) in showData" :key="item._id">
 
 
 			<uni-card @click="showDetail(item)">
@@ -31,50 +31,26 @@
 
 
 		</view>
-		<!-- 这里是进行中的活动的结束位置 -->
-		<!-- 这里是即将到来的活动 -->
-		<view class="line" style="transform: translateY(0rpx);"></view>
-		<view class="section">
-			即将到来
-		</view>
-		<view v-for="(item,index) in willdata" :key="item._id">
-
-
-			<uni-card @click="showDetail(item)">
-				<view class="uni-card">
-					<view>
-						<h3>{{item.title}}</h3>
-						<view class="tag">
-							<text v-for="(itemtag,indextag) in item.actag" :key="indextag">{{itemtag}}</text>
-						</view>
-						<text>{{item.ddl}}</text>
-					</view>
-					<view class="rightCard">
-						<image src="../../static/2.png" style="width: 100rpx; height: 130rpx;"></image>
-						<text
-							style="width: 100rpx;overflow: hidden;text-overflow: clip;;white-space: nowrap;">联合活动</text>
-					</view>
-				</view>
-			</uni-card>
-		</view>
-		<!-- 这里是即将到来的活动的结束位置 -->
+	
 	</view>
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
+
+	let scene = ""
+
 	export default {
 		components: {},
 		data() {
 			return {
 				//渲染数据
-				firstdata: [],
-				nowdata: [],
-				willdata: [],
+				showData: [],
 				// cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
-				avatar: [
-					'https://img1.baidu.com/it/u=2407625550,1485951297&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1680627600&t=2d3299bc86c91a1048d93cf01096bc15',
-					'https://img1.baidu.com/it/u=4120075661,439968901&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1680627600&t=8682d52389e8faa8b2aa4f37969ba30e'
-				],
+				title:String,
 				extraIcon: {
 					color: '#4cd964',
 					size: '22',
@@ -100,49 +76,44 @@
 				})
 			}
 		},
+		onLoad: function(option) { //option为object类型，会序列化上个页面传递的参数
+			//console.log(option._id)
+			scene = option.scene
+		},
 		mounted() {
 			uniCloud.callFunction({
-				name: 'detail-activities'
+				name: 'getMyActivity',
+				data: {
+					_id: store.userInfo._id,
+				},
 			}).then((res) => {
-				this.firstdata = res.result.data
-				for (let i = 0; i < this.firstdata.length; i++) {
-					if (this.firstdata[i].isdoing === "now") {
-						this.nowdata.push(this.firstdata[i])
-					} else {
-						this.willdata.push(this.firstdata[i])
-					}
-				}
+				this.showData = res.result
+				this.showData = this.showData.filter((index,item)=>{
+					return item.isdoing === scene
+				})
+				// console.log(this.showData)
 			}).catch((err) => {
 				console.error(err)
 			})
 		},
-		onPullDownRefresh(){
+		onPullDownRefresh() {
 			uniCloud.callFunction({
-				name: 'detail-activities'
+				name: 'getMyActivity',
+				data: {
+					_id: store.userInfo._id,
+				},
 			}).then((res) => {
-				this.firstdata = res.result.data
-				let nowtemp = []
-				let willtemp = []
-				for (let i = 0; i < this.firstdata.length; i++) {
-					if (this.firstdata[i].isdoing === "now") {
-						nowtemp.push(this.firstdata[i])
-						this.nowdata = nowtemp
-					} else {
-						willtemp.push(this.firstdata[i])
-						this.willdata = willtemp
-					}
-				}
-				console.log(this.nowdata)
-				console.log(this.willdata)
-				console.log(res.result.data)
+				this.showData = res.result
+				this.showData = this.showData.filter((index,item)=>{
+					return item.isdoing === scene
+				})
+				// console.log(this.showData)
 			}).catch((err) => {
 				console.error(err)
 			})
-			uni.stopPullDownRefresh()
 		}
 	}
 </script>
-
 
 <style>
 	.uni-card {
@@ -201,8 +172,8 @@
 		font-family: "myfont";
 		font-size: 40rpx;
 	}
-	
-	.bg{
+
+	.bg {
 		position: fixed;
 
 		width: 800rpx;

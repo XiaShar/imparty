@@ -29,15 +29,15 @@
 						我的活动
 					</view>
 					<view class="actList">
-						<button>
+						<button @click="showMyActivity('will')">
 							<image :src="icon.pre" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">已预约</view>
 						</button>
-						<button>
+						<button @click="showMyActivity('now')">
 							<image :src="icon.ing" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">进行中</view>
 						</button>
-						<button>
+						<button @click="showMyActivity('end')">
 							<image :src="icon.ed" style="width: 80rpx; height: 50%;"></image>
 							<view style="font-size: 25rpx;">已结束</view>
 						</button>
@@ -142,6 +142,12 @@
 						url: "./editingView"
 					})
 				}
+			},
+			
+			showMyActivity(goal){
+				uni.navigateTo({
+					url:`./myActivity?scene=${goal}`
+				})
 			}
 		}
 	}

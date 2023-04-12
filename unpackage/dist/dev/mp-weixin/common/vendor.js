@@ -16585,7 +16585,7 @@ const pages = [
     }
   },
   {
-    path: "pages/profile/myActivity/myActivity",
+    path: "pages/profile/myActivity",
     style: {
       navigationBarTitleText: "我的活动"
     }
@@ -16720,13 +16720,6 @@ const pages = [
     style: {
       enablePullDownRefresh: false,
       navigationBarTitleText: "实名认证"
-    }
-  },
-  {
-    path: "pages/profile/myActivity/myActivity",
-    style: {
-      navigationBarTitleText: "",
-      enablePullDownRefresh: false
     }
   }
 ];

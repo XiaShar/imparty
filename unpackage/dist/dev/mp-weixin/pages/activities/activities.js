@@ -50,9 +50,6 @@ const _sfc_main = {
           this.willdata.push(this.firstdata[i]);
         }
       }
-      console.log(this.nowdata);
-      console.log(this.willdata);
-      console.log(res.result.data);
     }).catch((err) => {
       console.error(err);
     });
