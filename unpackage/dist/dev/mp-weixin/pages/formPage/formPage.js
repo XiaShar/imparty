@@ -81,6 +81,11 @@ const _sfc_main = {
     submit(ref) {
       this.$refs[ref].validate((err, value) => {
         console.log(123);
+        console.log(this.dynamicFormData);
+        common_vendor.Ls.callFunction({
+          name: "commitForm",
+          data: { formobj: this.dynamicFormData }
+        });
       });
     }
   }

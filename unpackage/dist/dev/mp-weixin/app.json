@@ -2,6 +2,7 @@
   "pages": [
     "pages/activities/activities",
     "pages/profile/index",
+    "pages/profile/myActivity/myActivity",
     "pages/profile/editingView",
     "pages/formPage/formPage",
     "pages/activeDetail/activeDetail",
@@ -20,7 +21,8 @@
     "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
     "uni_modules/uni-id-pages/pages/register/register-admin",
     "uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd",
-    "uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify"
+    "uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify",
+    "pages/profile/myActivity/myActivity"
   ],
   "window": {
     "navigationBarTextStyle": "black",

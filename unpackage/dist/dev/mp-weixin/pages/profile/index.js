@@ -33,7 +33,7 @@ const _sfc_main = {
     editInfo() {
       if (common_vendor.Ls.getCurrentUserInfo().uid === null) {
         common_vendor.index.navigateTo({
-          url: "/uni_modules/uni-id-pages/pages/login/login-withpwd"
+          url: "/uni_modules/uni-id-pages/pages/login/login"
         });
       } else {
         common_vendor.index.navigateTo({
