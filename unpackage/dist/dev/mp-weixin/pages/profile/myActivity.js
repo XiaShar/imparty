@@ -10,12 +10,13 @@ const _sfc_main = {
       //渲染数据
       showData: [],
       // cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
-      title: String,
+      title: "",
       extraIcon: {
         color: "#4cd964",
         size: "22",
         type: "gear-filled"
-      }
+      },
+      empty: false
     };
   },
   methods: {
@@ -34,12 +35,21 @@ const _sfc_main = {
         title: text,
         icon: "none"
       });
+    },
+    getTitle() {
+      return "qaq";
     }
   },
   onLoad: function(option) {
     scene = option.scene;
   },
   mounted() {
+    if (scene === "will")
+      this.title = "即将开始";
+    if (scene === "now")
+      this.title = "正在进行中";
+    if (scene === "end")
+      this.title = "已结束";
     common_vendor.Ls.callFunction({
       name: "getMyActivity",
       data: {
@@ -47,9 +57,11 @@ const _sfc_main = {
       }
     }).then((res) => {
       this.showData = res.result;
-      this.showData = this.showData.filter((index, item) => {
+      this.showData = this.showData.filter((item) => {
         return item.isdoing === scene;
       });
+      if (this.showData.length === 0)
+        this.empty = true;
     }).catch((err) => {
       console.error(err);
     });
@@ -79,9 +91,11 @@ if (!Math) {
   _easycom_uni_card();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {
+  return common_vendor.e({
     a: common_vendor.t($data.title),
-    b: common_vendor.f($data.showData, (item, index, i0) => {
+    b: $data.empty
+  }, $data.empty ? {} : {}, {
+    c: common_vendor.f($data.showData, (item, index, i0) => {
       return {
         a: common_vendor.t(item.title),
         b: common_vendor.f(item.actag, (itemtag, indextag, i1) => {
@@ -96,7 +110,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         f: item._id
       };
     })
-  };
+  });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/myActivity.vue"]]);
 wx.createPage(MiniProgramPage);

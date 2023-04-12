@@ -135,7 +135,7 @@
 			editInfo() {
 				if (uniCloud.getCurrentUserInfo().uid === null) {
 					uni.navigateTo({
-						url: "/uni_modules/uni-id-pages/pages/login/login"
+						url: "/uni_modules/uni-id-pages/pages/login/login-withpwd"
 					})
 				} else {
 					uni.navigateTo({

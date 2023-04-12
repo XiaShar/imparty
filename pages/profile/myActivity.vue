@@ -7,6 +7,9 @@
 		<view class="section">
 			{{ title }}
 		</view>
+		<view style="display: flex; justify-content: center;" v-if="empty">
+			<text>这里还没有你报名过的活动奥\n如结果异常可以下拉刷新ovo</text>
+		</view>
 		<!-- 这里是进行中的活动 -->
 		<view v-for="(item,index) in showData" :key="item._id">
 
@@ -41,6 +44,7 @@
 		mutations
 	} from '@/uni_modules/uni-id-pages/common/store.js'
 
+
 	let scene = ""
 
 	export default {
@@ -50,12 +54,13 @@
 				//渲染数据
 				showData: [],
 				// cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
-				title:String,
+				title:"",
 				extraIcon: {
 					color: '#4cd964',
 					size: '22',
 					type: 'gear-filled'
-				}
+				},
+				empty:false
 			}
 		},
 		methods: {
@@ -74,6 +79,9 @@
 					title: text,
 					icon: 'none'
 				})
+			},
+			getTitle(){
+				return 'qaq'
 			}
 		},
 		onLoad: function(option) { //option为object类型，会序列化上个页面传递的参数
@@ -81,6 +89,9 @@
 			scene = option.scene
 		},
 		mounted() {
+			if(scene === 'will')this.title = '即将开始'
+			if(scene === 'now') this.title = '正在进行中'
+			if(scene === 'end') this.title = '已结束'
 			uniCloud.callFunction({
 				name: 'getMyActivity',
 				data: {
@@ -88,10 +99,10 @@
 				},
 			}).then((res) => {
 				this.showData = res.result
-				this.showData = this.showData.filter((index,item)=>{
+				this.showData = this.showData.filter((item)=>{
 					return item.isdoing === scene
 				})
-				// console.log(this.showData)
+				if(this.showData.length === 0) this.empty = true
 			}).catch((err) => {
 				console.error(err)
 			})

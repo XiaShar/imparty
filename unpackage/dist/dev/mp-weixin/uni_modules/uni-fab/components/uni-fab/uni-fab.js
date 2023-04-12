@@ -214,5 +214,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     D: common_vendor.o((...args) => $options._onClick && $options._onClick(...args))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-fab/components/uni-fab/uni-fab.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-fab/components/uni-fab/uni-fab.vue"]]);
 wx.createComponent(Component);
