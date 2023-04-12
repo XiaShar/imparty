@@ -79,6 +79,10 @@
 
 <script>
 	let opt_id = ''
+  import {
+  	store,
+  	mutations
+  } from '@/uni_modules/uni-id-pages/common/store.js'
 	//title,masteratti,aligintitle,description,known,requirement
 	export default {
 		data() {
@@ -119,9 +123,32 @@
 						content: "该功能尚在开发中..."
 					})
 				} else if (e.index === 1) {
-					uni.navigateTo({
-						url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
-					})
+          let flag = true
+          uniCloud.callFunction({
+            name:"getMyActivity",
+            data:{_id:store.userInfo._id}
+          }).then((res)=>{
+            // console.log(res.result)
+            res.result.forEach(item=>{
+              if(item._id===this.dedata[0]._id){
+                flag = false
+                // console.log(this.dedata[0]._id)
+                // console.log(flag)
+              }
+            })
+          if(flag){
+            // console.log(1)
+            uni.navigateTo({
+            	url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
+            })
+          }else{
+            uni.showToast({
+              title:"您已报名该活动"
+              })
+            }					        
+          })
+          
+          
 				}
 			},
 		},

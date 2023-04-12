@@ -123,7 +123,7 @@
 				this.firstdata = res.result.data
 				let nowtemp = []
 				let willtemp = []
-				for (let i = 0; i < this.firstdata.length; i++) {
+				for (let i = 0; i < this.firstdata.length;i++) {
 					if (this.firstdata[i].isdoing === "now") {
 						nowtemp.push(this.firstdata[i])
 						this.nowdata = nowtemp

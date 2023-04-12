@@ -91,21 +91,14 @@ const _sfc_main = {
           name: "commitForm",
           data: { formobj: this.dynamicFormData }
         }).then((res) => {
-          console.log(res.result);
-          if (res.result.isIn === "ALREADYEXIST") {
-            common_vendor.index.showToast({
-              title: "该用户已报名"
-            });
-          } else {
-            common_vendor.index.showToast({
-              title: "报名成功",
-              success() {
-                setTimeout(() => common_vendor.index.navigateBack({
-                  url: "../activeDetail/activeDetail"
-                }), 2e3);
-              }
-            });
-          }
+          common_vendor.index.showToast({
+            title: "报名成功",
+            success() {
+              setTimeout(() => common_vendor.index.navigateBack({
+                url: "../activeDetail/activeDetail"
+              }), 2e3);
+            }
+          });
         });
       });
     }

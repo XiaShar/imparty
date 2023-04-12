@@ -1,6 +1,8 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const uni_modules_uniIdPages_common_store = require("../../uni_modules/uni-id-pages/common/store.js");
 const common_assets = require("../../common/assets.js");
+require("../../uni_modules/uni-id-pages/config.js");
 let opt_id = "";
 const _sfc_main = {
   data() {
@@ -41,8 +43,25 @@ const _sfc_main = {
           content: "该功能尚在开发中..."
         });
       } else if (e.index === 1) {
-        common_vendor.index.navigateTo({
-          url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
+        let flag = true;
+        common_vendor.Ls.callFunction({
+          name: "getMyActivity",
+          data: { _id: uni_modules_uniIdPages_common_store.store.userInfo._id }
+        }).then((res) => {
+          res.result.forEach((item) => {
+            if (item._id === this.dedata[0]._id) {
+              flag = false;
+            }
+          });
+          if (flag) {
+            common_vendor.index.navigateTo({
+              url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
+            });
+          } else {
+            common_vendor.index.showToast({
+              title: "您已报名该活动"
+            });
+          }
         });
       }
     }
