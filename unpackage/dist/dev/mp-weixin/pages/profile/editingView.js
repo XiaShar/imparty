@@ -166,8 +166,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "电话",
       name: "phone"
     }),
-    p: common_vendor.sr("dynamicForm", "19e7f49e-0"),
-    q: common_vendor.p({
+    s: common_vendor.sr("dynamicForm", "51830af0-0"),
+    t: common_vendor.p({
       rules: $data.dynamicRules,
       model: $data.dynamicFormData,
       ["label-position"]: "top"
@@ -176,5 +176,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     s: common_vendor.o(($event) => $options.logout())
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/profile/editingView.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/profile/editingView.vue"]]);
 wx.createPage(MiniProgramPage);

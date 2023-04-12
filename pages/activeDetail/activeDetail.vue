@@ -78,7 +78,7 @@
 </template>
 
 <script>
-	let _id = ''
+	let opt_id = ''
 	//title,masteratti,aligintitle,description,known,requirement
 	export default {
 		data() {
@@ -120,26 +120,24 @@
 					})
 				} else if (e.index === 1) {
 					uni.navigateTo({
-						url: "../formPage/formPage"
+						url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
 					})
 				}
 			},
 		},
 		computed: {},
 		onLoad: function(option) { //option为object类型，会序列化上个页面传递的参数
-			//console.log(option._id)
-			_id = option._id
+			opt_id = option._id
 		},
 		mounted() {
-			console.log(_id)
 			uniCloud.callFunction({
 				name: 'detail-activities',
 				data: {
-					objId: _id
+					objId: opt_id
 				}
 			}).then((res) => {
 				this.dedata = res.result.data
-				console.log(res.dedata.requirement)
+				console.log(res.result.data)
 			}).catch((err) => {
 				console.error(err)
 			})

@@ -101,5 +101,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     i: common_vendor.o(($event) => $options.val = $event.detail.value)
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-a00179ae"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-a00179ae"], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue"]]);
 wx.createComponent(Component);

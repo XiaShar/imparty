@@ -3,11 +3,17 @@ const common_vendor = require("../../common/vendor.js");
 const uni_modules_uniIdPages_common_store = require("../../uni_modules/uni-id-pages/common/store.js");
 require("../../uni_modules/uni-id-pages/config.js");
 common_vendor.Ls.importObject("uni-id-co");
+let activities_id = "";
 const _sfc_main = {
+  onLoad: function(option) {
+    activities_id = option.activities_id;
+    console.log(activities_id);
+  },
   data() {
     return {
       // 数据源
       dynamicFormData: {
+        userId: uni_modules_uniIdPages_common_store.store.userInfo._id,
         name: uni_modules_uniIdPages_common_store.store.userInfo.nickname,
         gender: uni_modules_uniIdPages_common_store.store.userInfo.gender,
         school: uni_modules_uniIdPages_common_store.store.userInfo.school,
@@ -80,11 +86,26 @@ const _sfc_main = {
   methods: {
     submit(ref) {
       this.$refs[ref].validate((err, value) => {
-        console.log(123);
-        console.log(this.dynamicFormData);
+        this.dynamicFormData.activityId = activities_id;
         common_vendor.Ls.callFunction({
           name: "commitForm",
           data: { formobj: this.dynamicFormData }
+        }).then((res) => {
+          console.log(res.result);
+          if (res.result.isIn === "ALREADYEXIST") {
+            common_vendor.index.showToast({
+              title: "该用户已报名"
+            });
+          } else {
+            common_vendor.index.showToast({
+              title: "报名成功",
+              success() {
+                setTimeout(() => common_vendor.index.navigateBack({
+                  url: "../activeDetail/activeDetail"
+                }), 2e3);
+              }
+            });
+          }
         });
       });
     }
@@ -196,7 +217,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "对方学院",
       name: "goalSchool"
     }),
-    w: common_vendor.sr("dynamicForm", "6d7603c9-0"),
+    w: common_vendor.sr("dynamicForm", "7c9dc260-0"),
     x: common_vendor.p({
       rules: $data.dynamicRules,
       model: $data.dynamicFormData,
@@ -205,5 +226,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     y: common_vendor.o(($event) => $options.submit("dynamicForm"))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/formPage/formPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/formPage/formPage.vue"]]);
 wx.createPage(MiniProgramPage);

@@ -132,9 +132,6 @@
 						this.willdata = willtemp
 					}
 				}
-				console.log(this.nowdata)
-				console.log(this.willdata)
-				console.log(res.result.data)
 			}).catch((err) => {
 				console.error(err)
 			})
