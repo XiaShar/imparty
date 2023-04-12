@@ -1,7 +1,7 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const common_assets = require("../../common/assets.js");
-let _id = "";
+let opt_id = "";
 const _sfc_main = {
   data() {
     return {
@@ -42,25 +42,24 @@ const _sfc_main = {
         });
       } else if (e.index === 1) {
         common_vendor.index.navigateTo({
-          url: "../formPage/formPage"
+          url: `../formPage/formPage?activities_id=${this.dedata[0]._id}`
         });
       }
     }
   },
   computed: {},
   onLoad: function(option) {
-    _id = option._id;
+    opt_id = option._id;
   },
   mounted() {
-    console.log(_id);
     common_vendor.Ls.callFunction({
       name: "detail-activities",
       data: {
-        objId: _id
+        objId: opt_id
       }
     }).then((res) => {
       this.dedata = res.result.data;
-      console.log(res.dedata.requirement);
+      console.log(res.result.data);
     }).catch((err) => {
       console.error(err);
     });
@@ -83,11 +82,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.t(item.title),
         b: common_vendor.t(item.masteratti.join(",")),
         c: common_vendor.t(item.aligintitle),
-        d: "9f96ab6e-0-" + i0,
+        d: "31c83c40-0-" + i0,
         e: common_vendor.t(item.description),
-        f: "9f96ab6e-1-" + i0,
+        f: "31c83c40-1-" + i0,
         g: common_vendor.t(item.known),
-        h: "9f96ab6e-2-" + i0,
+        h: "31c83c40-2-" + i0,
         i: common_vendor.f(item.requirement, (mitem, mindex, i1) => {
           return {
             a: common_vendor.t(mitem.index),
@@ -95,11 +94,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             c: mitem.mindex
           };
         }),
-        j: "9f96ab6e-3-" + i0,
-        k: common_vendor.sr("fab", "9f96ab6e-4-" + i0, {
+        j: "31c83c40-3-" + i0,
+        k: common_vendor.sr("fab", "31c83c40-4-" + i0, {
           "f": 1
         }),
-        l: "9f96ab6e-4-" + i0
+        l: "31c83c40-4-" + i0
       };
     }),
     b: common_assets._imports_0$1,
@@ -117,5 +116,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     g: $data.dedata.id
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/activeDetail/activeDetail.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/activeDetail/activeDetail.vue"]]);
 wx.createPage(MiniProgramPage);

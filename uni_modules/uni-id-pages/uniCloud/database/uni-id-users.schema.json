@@ -205,6 +205,15 @@
 				"write": "'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
 			}
 		},
+		"phone": {
+			"bsonType": "string",
+			"description": "活动手机号",
+			"title": "手机号",
+			"permission": {
+				"read": true,
+				"write": "doc._id == auth.uid || 'CREATE_UNI_ID_USERS' in auth.permission || 'UPDATE_UNI_ID_USERS' in auth.permission"
+			}
+		},
 		"nickname": {
 			"bsonType": "string",
 			"description": "用户昵称",

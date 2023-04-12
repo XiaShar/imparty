@@ -74,12 +74,17 @@
 	} from '@/uni_modules/uni-id-pages/common/store.js'
 
 	const uniIdCo = uniCloud.importObject("uni-id-co")
-
+  let activities_id = ''
 	export default {
+    onLoad: function(option) { //option为object类型，会序列化上个页面传递的参数
+    	 activities_id = option.activities_id
+       console.log(activities_id)
+    },
 		data() {
 			return {
 				// 数据源
 				dynamicFormData: {
+          userId:store.userInfo._id,
 					name: store.userInfo.nickname,
 					gender: store.userInfo.gender,
 					school: store.userInfo.school,
@@ -149,15 +154,31 @@
 		methods: {
 			submit(ref) {
 				this.$refs[ref].validate((err, value) => {
-					console.log(123)
-          console.log(this.dynamicFormData)
+          // console.log(this.dynamicFormData)
+          this.dynamicFormData.activityId = activities_id
           uniCloud.callFunction({
             name:'commitForm',
             data:{formobj:this.dynamicFormData}
+          }).then((res)=>{
+            console.log(res.result)
+            if(res.result.isIn === "ALREADYEXIST"){
+              uni.showToast({
+                title:"该用户已报名"
+              })
+            }else{
+              uni.showToast({
+                title:"报名成功",       
+                success(){
+                  setTimeout(()=>uni.navigateBack({
+                url:'../activeDetail/activeDetail'
+              }),2000)
+                }
+              })                         
+            }
           })
-				})
+          //console.log(store.userInfo)
+        })
 			},
-
 		}
 	}
 </script>
