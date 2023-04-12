@@ -91,7 +91,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "请输入手机号",
       modelValue: $data.formData.mobile
     }),
-    e: common_vendor.sr("smsForm", "1617ef6f-1"),
+    e: common_vendor.sr("smsForm", "b0e65850-1"),
     f: common_vendor.o(($event) => $data.formData.code = $event),
     g: common_vendor.p({
       type: "bind-mobile-by-sms",
@@ -99,7 +99,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       modelValue: $data.formData.code
     }),
     h: common_vendor.o((...args) => $options.submit && $options.submit(...args)),
-    i: common_vendor.sr("popup", "1617ef6f-2"),
+    i: common_vendor.sr("popup", "b0e65850-2"),
     j: common_vendor.o($options.submit),
     k: common_vendor.o(($event) => $data.formData.captcha = $event),
     l: common_vendor.p({
@@ -108,5 +108,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile.vue"]]);
 wx.createPage(MiniProgramPage);

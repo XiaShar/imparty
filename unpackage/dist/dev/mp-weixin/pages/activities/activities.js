@@ -97,7 +97,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         c: common_vendor.t(item.ddl),
         d: common_vendor.o(($event) => $options.showDetail(item), item._id),
-        e: "0cadd2c0-0-" + i0,
+        e: "58407b89-0-" + i0,
         f: item._id
       };
     }),
@@ -112,11 +112,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         c: common_vendor.t(item.ddl),
         d: common_vendor.o(($event) => $options.showDetail(item), item._id),
-        e: "0cadd2c0-1-" + i0,
+        e: "58407b89-1-" + i0,
         f: item._id
       };
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/activities/activities.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/activities/activities.vue"]]);
 wx.createPage(MiniProgramPage);

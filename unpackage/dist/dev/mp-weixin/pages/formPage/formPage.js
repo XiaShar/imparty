@@ -217,7 +217,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "对方学院",
       name: "goalSchool"
     }),
-    w: common_vendor.sr("dynamicForm", "7c9dc260-0"),
+    w: common_vendor.sr("dynamicForm", "6d7603c9-0"),
     x: common_vendor.p({
       rules: $data.dynamicRules,
       model: $data.dynamicFormData,
@@ -226,5 +226,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     y: common_vendor.o(($event) => $options.submit("dynamicForm"))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/86183/Desktop/hbuilder/Git/pages/formPage/formPage.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/pages/formPage/formPage.vue"]]);
 wx.createPage(MiniProgramPage);
