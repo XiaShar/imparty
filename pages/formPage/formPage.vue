@@ -160,12 +160,6 @@
             name:'commitForm',
             data:{formobj:this.dynamicFormData}
           }).then((res)=>{
-            console.log(res.result)
-            if(res.result.isIn === "ALREADYEXIST"){
-              uni.showToast({
-                title:"该用户已报名"
-              })
-            }else{
               uni.showToast({
                 title:"报名成功",       
                 success(){
@@ -173,8 +167,7 @@
                 url:'../activeDetail/activeDetail'
               }),2000)
                 }
-              })                         
-            }
+              })                                     
           })
           //console.log(store.userInfo)
         })

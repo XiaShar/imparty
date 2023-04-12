@@ -166,8 +166,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       label: "电话",
       name: "phone"
     }),
-    s: common_vendor.sr("dynamicForm", "51830af0-0"),
-    t: common_vendor.p({
+    p: common_vendor.sr("dynamicForm", "51830af0-0"),
+    q: common_vendor.p({
       rules: $data.dynamicRules,
       model: $data.dynamicFormData,
       ["label-position"]: "top"
