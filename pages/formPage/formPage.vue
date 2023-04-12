@@ -79,7 +79,7 @@
 					school: store.userInfo.school,
 					phone: store.userInfo.phone,
 					sign:"",
-					goalGender:0,
+					goalGender:"",
 					goalSchool:"",
 				},
 				// 规则
@@ -96,6 +96,14 @@
 							},
 						]
 					},
+					gender: {
+						rules: [
+							{
+								required: true,
+								errorMessage: '请选择您的性别'
+							}, 
+						]
+					},
 					phone: {
 						rules: [
 							{
@@ -108,21 +116,25 @@
 							},
 						]
 					},
-					email: {
+					school: {
 						rules: [
 							{
-								format: 'email',
+								format: 'string',
 								errorMessage: '请正确填写邮箱'
 							},
+							{
+								required: true,
+								errorMessage: '请填写您的学院'
+							}, 
 						]
 					}
 				},
 				sexs: [{
 					text: '男',
-					value: 1
+					value: "男"
 				}, {
 					text: '女',
-					value: 2
+					value: "女"
 				}],
 				schools: [{
 					text: '计算机学院',
@@ -134,26 +146,12 @@
 			}
 		},
 		methods: {
-			logout(){
-				mutations.logout()
-			},
-			
 			submit(ref) {
-				// this.$refs[ref].validate((err, value) => {
-				// 	mutations.setUserInfo({ this.dynamicFormData.name })
-				// })
-				mutations.updateUserInfo({
-					nickname: this.dynamicFormData.name,
-					gender: this.dynamicFormData.gender,
-					school: this.dynamicFormData.school
+				this.$refs[ref].validate((err, value) => {
+					console.log(123)
 				})
 			},
-			
-			updatePhone(){
-				uni.navigateTo({
-					url: "/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile"
-				})
-			}
+
 		}
 	}
 </script>

@@ -24,7 +24,7 @@ export default {
     // #ifdef APP
     'apple',
     // #endif
-    'smsCode'
+    // 'smsCode'
   ],
   // 政策协议
   agreements: {

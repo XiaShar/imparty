@@ -128,6 +128,7 @@
 		},
 		methods: {
 			logout(){
+				uni.navigateBack()
 				mutations.logout()
 			},
 			

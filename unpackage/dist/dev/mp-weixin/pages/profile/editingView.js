@@ -68,6 +68,7 @@ const _sfc_main = {
   },
   methods: {
     logout() {
+      common_vendor.index.navigateBack();
       uni_modules_uniIdPages_common_store.mutations.logout();
     },
     submit(ref) {

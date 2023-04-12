@@ -9,7 +9,7 @@
 		<uni-forms>
 			<uni-forms-item name="username">
 				<uni-easyinput :focus="focusUsername" @blur="focusUsername = false" class="input-box"
-					:inputBorder="false" v-model="username" placeholder="请输入邮箱" :clearable="false"/>
+					:inputBorder="false" v-model="username" placeholder="请输入用户名/邮箱/手机号" :clearable="false"/>
 			</uni-forms-item>
 			<uni-forms-item name="password">
 				<uni-easyinput :focus="focusPassword" @blur="focusPassword = false" class="input-box"
@@ -137,7 +137,7 @@
 			toRegister() {
 				uni.navigateTo({
 					url: this.config.isAdmin ? '/uni_modules/uni-id-pages/pages/register/register-admin' :
-						'/uni_modules/uni-id-pages/pages/register/register-by-email',
+						'/uni_modules/uni-id-pages/pages/register/register',
 					fail(e) {
 						console.error(e);
 					}

@@ -98,7 +98,7 @@
 			},
 			show: {
 				type: Boolean,
-				default: false
+				default: true
 			},
 			popMenu: {
 				type: Boolean,
@@ -107,8 +107,8 @@
 		},
 		data() {
 			return {
-				fabShow: false,
-				isShow: false,
+				fabShow: true,
+				isShow: true,
 				isAndroidNvue: platform === 'android',
 				styles: {
 					color: '#3c3e49',

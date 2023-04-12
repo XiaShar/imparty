@@ -89,7 +89,7 @@ const _sfc_main = {
     /* 前往注册 */
     toRegister() {
       common_vendor.index.navigateTo({
-        url: this.config.isAdmin ? "/uni_modules/uni-id-pages/pages/register/register-admin" : "/uni_modules/uni-id-pages/pages/register/register-by-email",
+        url: this.config.isAdmin ? "/uni_modules/uni-id-pages/pages/register/register-admin" : "/uni_modules/uni-id-pages/pages/register/register",
         fail(e) {
           console.error(e);
         }
@@ -121,7 +121,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.p({
       focus: $data.focusUsername,
       inputBorder: false,
-      placeholder: "请输入邮箱",
+      placeholder: "请输入用户名/邮箱/手机号",
       clearable: false,
       modelValue: $data.username
     }),

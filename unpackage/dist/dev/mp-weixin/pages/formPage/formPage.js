@@ -13,7 +13,7 @@ const _sfc_main = {
         school: uni_modules_uniIdPages_common_store.store.userInfo.school,
         phone: uni_modules_uniIdPages_common_store.store.userInfo.phone,
         sign: "",
-        goalGender: 0,
+        goalGender: "",
         goalSchool: ""
       },
       // 规则
@@ -30,6 +30,14 @@ const _sfc_main = {
             }
           ]
         },
+        gender: {
+          rules: [
+            {
+              required: true,
+              errorMessage: "请选择您的性别"
+            }
+          ]
+        },
         phone: {
           rules: [
             {
@@ -42,21 +50,25 @@ const _sfc_main = {
             }
           ]
         },
-        email: {
+        school: {
           rules: [
             {
-              format: "email",
+              format: "string",
               errorMessage: "请正确填写邮箱"
+            },
+            {
+              required: true,
+              errorMessage: "请填写您的学院"
             }
           ]
         }
       },
       sexs: [{
         text: "男",
-        value: 1
+        value: "男"
       }, {
         text: "女",
-        value: 2
+        value: "女"
       }],
       schools: [{
         text: "计算机学院",
@@ -68,19 +80,9 @@ const _sfc_main = {
     };
   },
   methods: {
-    logout() {
-      uni_modules_uniIdPages_common_store.mutations.logout();
-    },
     submit(ref) {
-      uni_modules_uniIdPages_common_store.mutations.updateUserInfo({
-        nickname: this.dynamicFormData.name,
-        gender: this.dynamicFormData.gender,
-        school: this.dynamicFormData.school
-      });
-    },
-    updatePhone() {
-      common_vendor.index.navigateTo({
-        url: "/uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile"
+      this.$refs[ref].validate((err, value) => {
+        console.log(123);
       });
     }
   }

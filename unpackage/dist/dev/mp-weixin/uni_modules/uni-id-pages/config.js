@@ -18,8 +18,8 @@ const config = {
     // "alipay",
     // "douyin",
     "weixin",
-    "username",
-    "smsCode"
+    "username"
+    // 'smsCode'
   ],
   // 政策协议
   agreements: {

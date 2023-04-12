@@ -136,18 +136,19 @@
 	.uni-card {
 		margin: $uni-card-spacing;
 		padding: 0 $uni-spacing-sm;
-		border-radius: 4px;
+		border-radius: 12px;
 		overflow: hidden;
 		font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
 		background-color: #fff;
 		flex: 1;
+		overflow: visible;
 
 		.uni-card__cover {
 			position: relative;
 			margin-top: $uni-card-spacing;
 			flex-direction: row;
 			overflow: hidden;
-			border-radius: 4px;
+			border-radius: 12px;
 			.uni-card__cover-image {
 				flex: 1;
 				// width: 100%;
