@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<uni-forms ref="dynamicForm" :rules="dynamicRules" :model="dynamicFormData" label-position="top">
-<!-- 			<view class="title">
+			<!-- 			<view class="title">
 				<text style="margin-top: auto;margin-bottom: auto;margin-left: 50rpx;">头像</text>
 				<view class="icon">
 					<uni-id-pages-avatar width="80rpx" height="80rpx"></uni-id-pages-avatar>
@@ -11,47 +11,53 @@
 			<view class="line" style="margin-bottom: 35rpx;"></view> -->
 
 			<uni-forms-item label="姓名" name="name" class="item">
-				<uni-easyinput v-model="dynamicFormData.name" :inputBorder="false" :clearSize="20" :styles="{backgroundColor:'#f5f5f5'}" :clearable="false"/>
+				<uni-easyinput v-model="dynamicFormData.name" :inputBorder="false" :clearSize="20"
+					:styles="{backgroundColor:'#f5f5f5'}" :clearable="false" />
 			</uni-forms-item>
 
 			<view class="line" style="transform: translateY(-35rpx);"></view>
 
 			<uni-forms-item label="性别" name="gender" class="item">
-				<hpy-form-select :dataList="sexs" text="text" name="value" v-model="dynamicFormData.gender" :hide-border="true" />
-			</uni-forms-item>
-			
-			<view class="line" style="transform: translateY(-35rpx);"></view>
-			
-			<uni-forms-item label="学院" name="school" class="item">
-				<hpy-form-select :dataList="schools" text="text" name="value" v-model="dynamicFormData.school" :hide-border="true" />
+				<hpy-form-select :dataList="sexs" text="text" name="value" v-model="dynamicFormData.gender"
+					:hide-border="true" />
 			</uni-forms-item>
 
-			<view class="line" style="transform: translateY(-35rpx);"></view>	
-			
-			<uni-forms-item label="手机号" name="phone" class="item" >
-				<uni-easyinput v-model="dynamicFormData.phone" :inputBorder="false" :clearSize="20" :styles="{backgroundColor:'#f5f5f5'}" :clearable="false"/>
-			</uni-forms-item>
-			
 			<view class="line" style="transform: translateY(-35rpx);"></view>
-			
-			<uni-forms-item label="星座" name="sign" class="item" >
-				<uni-easyinput v-model="dynamicFormData.sign" :inputBorder="false" :clearSize="20" :styles="{backgroundColor:'#f5f5f5'}" :clearable="false"/>
+
+			<uni-forms-item label="学院" name="school" class="item">
+				<hpy-form-select :dataList="schools" text="text" name="value" v-model="dynamicFormData.school"
+					:hide-border="true" />
 			</uni-forms-item>
-			
+
 			<view class="line" style="transform: translateY(-35rpx);"></view>
-			
+
+			<uni-forms-item label="手机号" name="phone" class="item">
+				<uni-easyinput v-model="dynamicFormData.phone" :inputBorder="false" :clearSize="20"
+					:styles="{backgroundColor:'#f5f5f5'}" :clearable="false" />
+			</uni-forms-item>
+
+			<view class="line" style="transform: translateY(-35rpx);"></view>
+
+			<uni-forms-item label="星座" name="sign" class="item">
+				<uni-easyinput v-model="dynamicFormData.sign" :inputBorder="false" :clearSize="20"
+					:styles="{backgroundColor:'#f5f5f5'}" :clearable="false" />
+			</uni-forms-item>
+
+			<view class="line" style="transform: translateY(-35rpx);"></view>
+
 			<uni-forms-item label="对方性别" name="goalGender" class="item">
-				<hpy-form-select :dataList="sexs" text="text" name="value" v-model="dynamicFormData.goalGender" :hide-border="true" />
+				<hpy-form-select :dataList="sexs" text="text" name="value" v-model="dynamicFormData.goalGender"
+					:hide-border="true" />
 			</uni-forms-item>
-			
+
 			<view class="line" style="transform: translateY(-35rpx);"></view>
-			
+
 			<uni-forms-item label="对方学院" name="goalSchool" class="item">
-				<hpy-form-select :dataList="schools" text="text" name="value" v-model="dynamicFormData.goalSchool" :hide-border="true" />
+				<hpy-form-select :dataList="schools" text="text" name="value" v-model="dynamicFormData.goalSchool"
+					:hide-border="true" />
 			</uni-forms-item>
-			
-			<view class="line" style="transform: translateY(-35rpx);"></view>	
-			
+
+			<view class="line" style="transform: translateY(-35rpx);"></view>
 
 
 		</uni-forms>
@@ -63,12 +69,12 @@
 
 <script>
 	import {
-	  store,
-	  mutations
+		store,
+		mutations
 	} from '@/uni_modules/uni-id-pages/common/store.js'
-	
+
 	const uniIdCo = uniCloud.importObject("uni-id-co")
-	
+
 	export default {
 		data() {
 			return {
@@ -78,18 +84,17 @@
 					gender: store.userInfo.gender,
 					school: store.userInfo.school,
 					phone: store.userInfo.phone,
-					sign:"",
-					goalGender:"",
-					goalSchool:"",
+					sign: "",
+					goalGender: "",
+					goalSchool: "",
 				},
 				// 规则
 				dynamicRules: {
 					name: {
-						rules: [
-							{
+						rules: [{
 								required: true,
 								errorMessage: '姓名不能为空'
-							}, 
+							},
 							{
 								format: 'string',
 								errorMessage: '请正确填写姓名'
@@ -97,19 +102,16 @@
 						]
 					},
 					gender: {
-						rules: [
-							{
-								required: true,
-								errorMessage: '请选择您的性别'
-							}, 
-						]
+						rules: [{
+							required: true,
+							errorMessage: '请选择您的性别'
+						}, ]
 					},
 					phone: {
-						rules: [
-							{
+						rules: [{
 								required: true,
 								errorMessage: '手机号不能为空'
-							}, 
+							},
 							{
 								format: 'string',
 								errorMessage: '请正确填写手机号'
@@ -117,15 +119,14 @@
 						]
 					},
 					school: {
-						rules: [
-							{
+						rules: [{
 								format: 'string',
 								errorMessage: '请正确填写邮箱'
 							},
 							{
 								required: true,
 								errorMessage: '请填写您的学院'
-							}, 
+							},
 						]
 					}
 				},
@@ -201,16 +202,16 @@
 	.uni-pb-5 {
 		padding: 40px;
 	}
-	
-	.button-group{
+
+	.button-group {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		margin-top: 20rpx;
 		flex-direction: column;
 	}
-	
-	.subButn{
+
+	.subButn {
 		color: white;
 		width: 70%;
 		height: 75rpx;
@@ -222,8 +223,8 @@
 		opacity: 0.9;
 		font-size: 30rpx;
 	}
-	
-	.logoutButn{
+
+	.logoutButn {
 		color: white;
 		margin-top: 50rpx;
 		width: 70%;
@@ -236,7 +237,8 @@
 		opacity: 0.5;
 		font-size: 30rpx;
 	}
-	.container{
+
+	.container {
 		margin-left: 50rpx;
 		margin-right: 50rpx;
 	}

@@ -31,12 +31,10 @@ const _sfc_main = {
           ]
         },
         gender: {
-          rules: [
-            {
-              required: true,
-              errorMessage: "请选择您的性别"
-            }
-          ]
+          rules: [{
+            required: true,
+            errorMessage: "请选择您的性别"
+          }]
         },
         phone: {
           rules: [

@@ -157,11 +157,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     p: common_vendor.o((...args) => $options.pwdLogin && $options.pwdLogin(...args)),
     q: !_ctx.config.isAdmin
-  }, !_ctx.config.isAdmin ? {
-    r: common_vendor.o((...args) => $options.toRetrievePwd && $options.toRetrievePwd(...args))
-  } : {}, {
-    s: common_vendor.t(_ctx.config.isAdmin ? "注册管理员账号" : "注册账号"),
-    t: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args))
+  }, !_ctx.config.isAdmin ? {} : {}, {
+    r: common_vendor.t(_ctx.config.isAdmin ? "注册管理员账号" : "注册账号"),
+    s: common_vendor.o((...args) => $options.toRegister && $options.toRegister(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-58ed63b0"], ["__file", "C:/Users/SundayV/Documents/HBuilderProjects/myApp/uni_modules/uni-id-pages/pages/login/login-withpwd.vue"]]);

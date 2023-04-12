@@ -1,6 +1,7 @@
 {
+  "enablePullDownRefresh": true,
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "活动",
+  "navigationBarTitleText": "活动列表",
   "navigationBarBackgroundColor": "#F8F8F8",
   "backgroundColor": "#F8F8F8",
   "usingComponents": {

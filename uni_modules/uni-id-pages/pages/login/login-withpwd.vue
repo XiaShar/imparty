@@ -23,8 +23,8 @@
 		<!-- 忘记密码 -->
 		<view class="link-box">
 			<view v-if="!config.isAdmin">
-				<text class="forget">忘记了？</text>
-				<text class="link" @click="toRetrievePwd">找回密码</text>
+<!-- 				<text class="forget">忘记了？</text>
+				<text class="link" @click="toRetrievePwd">找回密码</text> -->
 			</view>
 			<text class="link" @click="toRegister">{{config.isAdmin ? '注册管理员账号': '注册账号'}}</text>
 			<!-- <text class="link" @click="toRegister" v-if="!config.isAdmin">注册账号</text> -->

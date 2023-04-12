@@ -56,6 +56,30 @@ const _sfc_main = {
     }).catch((err) => {
       console.error(err);
     });
+  },
+  onPullDownRefresh() {
+    common_vendor.Ls.callFunction({
+      name: "detail-activities"
+    }).then((res) => {
+      this.firstdata = res.result.data;
+      let nowtemp = [];
+      let willtemp = [];
+      for (let i = 0; i < this.firstdata.length; i++) {
+        if (this.firstdata[i].isdoing === "now") {
+          nowtemp.push(this.firstdata[i]);
+          this.nowdata = nowtemp;
+        } else {
+          willtemp.push(this.firstdata[i]);
+          this.willdata = willtemp;
+        }
+      }
+      console.log(this.nowdata);
+      console.log(this.willdata);
+      console.log(res.result.data);
+    }).catch((err) => {
+      console.error(err);
+    });
+    common_vendor.index.stopPullDownRefresh();
   }
 };
 if (!Array) {

@@ -16568,7 +16568,7 @@ const pages = [
   {
     path: "pages/profile/index",
     style: {
-      navigationBarTitleText: "uni-app"
+      navigationBarTitleText: "我的"
     }
   },
   {
@@ -16581,8 +16581,9 @@ const pages = [
   {
     path: "pages/activities/activities",
     style: {
+      enablePullDownRefresh: true,
       navigationBarTextStyle: "black",
-      navigationBarTitleText: "活动",
+      navigationBarTitleText: "活动列表",
       navigationBarBackgroundColor: "#F8F8F8",
       backgroundColor: "#F8F8F8",
       "app-plus": {

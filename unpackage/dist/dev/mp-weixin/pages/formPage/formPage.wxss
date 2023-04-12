@@ -37,14 +37,14 @@
 .uni-pb-5 {
 		padding: 40px;
 }
-.button-group{
+.button-group {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		margin-top: 20rpx;
 		flex-direction: column;
 }
-.subButn{
+.subButn {
 		color: white;
 		width: 70%;
 		height: 75rpx;
@@ -56,7 +56,7 @@
 		opacity: 0.9;
 		font-size: 30rpx;
 }
-.logoutButn{
+.logoutButn {
 		color: white;
 		margin-top: 50rpx;
 		width: 70%;
@@ -69,7 +69,7 @@
 		opacity: 0.5;
 		font-size: 30rpx;
 }
-.container{
+.container {
 		margin-left: 50rpx;
 		margin-right: 50rpx;
 }
